@@ -1,6 +1,16 @@
-- 面试框架
-  - [观点展开法](/framework/viewpoint.md)
-  - [答题结构](/framework/structure.md)
-- 面试技巧
-  - [话术技巧](/skills/talk.md)
-  - [复盘方法](/skills/review.md)
+- 入门指南
+  - [面试入门：游击战法](/guide/getting-started.md)
+- 答题方法论
+  - [观点展开法](/method/point-expand.md)
+  - [答题深度提升](/method/improve-depth.md)
+  - [大量答题把握宏观](/method/practice-macro.md)
+- 题型专训
+  - [调研类题目](/question-types/research.md)
+  - [漫画名言哲理题](/question-types/allegory.md)
+- 练习方法
+  - [复盘方法](/practice/review.md)
+  - [对练与积累](/practice/practice-methods.md)
+- 表达能力
+  - [口头语消除训练](/expression/expression-skills.md)
+- 心态调整
+  - [备考心态](/mindset/mindset.md)
