@@ -1,12 +1,10 @@
 <div align="center">
-  <img src="./LOGO.svg" width="200" alt="logo">
+  <img src="./LOGO_抠图.png" width="250" alt="logo">
 </div>
 
 # 一个路人甲
 
-> 结构化面试
->
-> 原创知识体系
+> 结构化面试原创知识体系
 
 [开始学习 →](./README.md)
 
