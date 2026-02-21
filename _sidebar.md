@@ -1,0 +1,6 @@
+- 面试框架
+  - [观点展开法](/framework/viewpoint.md)
+  - [答题结构](/framework/structure.md)
+- 面试技巧
+  - [话术技巧](/skills/talk.md)
+  - [复盘方法](/skills/review.md)
