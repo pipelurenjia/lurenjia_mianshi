@@ -1,4 +1,6 @@
-![logo](https://img.shields.io/badge/一个路人甲-结构化面试-blue)
+<div align="center">
+  <img src="./LOGO.svg" width="200" alt="logo">
+</div>
 
 # 原创结构化面试知识体系
 
