@@ -1,3 +1,5 @@
+
+
 <div align="center">
   <img src="./LOGO_抠图.png" width="250" alt="logo">
 </div>
@@ -6,7 +8,7 @@
 
 > 结构化面试原创知识体系
 
-[开始学习 →](./README.md)
+[开始学习](./README.md)
 
 
 

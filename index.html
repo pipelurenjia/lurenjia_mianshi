@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <style>
     section.cover {
-      background: linear-gradient(135deg, #e3efe8 0%, #c5ddd0 50%, #a8d4c3 100%);
+      background: linear-gradient(315deg, #B3B8FE 0%, #D4DCD7 50%, #F2FCB4 100%) !important;
     }
     .cover-main h1 {
       color: #2d5a47 !important;
@@ -15,12 +15,15 @@
     .cover-main p {
       color: #4a6b5c !important;
     }
-    .cover-main a {
-      color: #348f6b !important;
-      border-color: #348f6b !important;
+    .cover-main >p >a {
+      color: #ffffff !important;
+      border: 1px solid #348f6b !important;  /* 外框 */
+      padding: 8px 20px !important;          /* 内边距 */
+      border-radius: 25px !important;         /* 圆角 */
+      text-decoration: none !important;      /* 去掉下划线 */
     }
-    .cover-main a:hover {
-      background: transparent !important;
+    .cover-main >p >a {
+      background: #348f6b !important;        /* 悬停时填充背景 */
       color: #fff !important;
     }
     /* 调整标题和副标题间距 - 增强版 */
@@ -28,7 +31,7 @@
       margin-bottom: 3px !important;
     }
     .cover-main blockquote {
-      margin-top: 5px !important;
+      margin-top: 3px !important;
       margin-bottom: 30px !important;
       line-height: 1.5;
     }
