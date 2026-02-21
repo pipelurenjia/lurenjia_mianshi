@@ -5,6 +5,25 @@
   <title>一个路人甲结构化面试</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <style>
+    section.cover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .cover-main h1 {
+      color: #fff !important;
+    }
+    .cover-main p {
+      color: rgba(255,255,255,0.8) !important;
+    }
+    .cover-main a {
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+    .cover-main a:hover {
+      background: #fff !important;
+      color: #667eea !important;
+    }
+  </style>
 </head>
 <body>
   <div id="app">加载中...</div>
@@ -15,6 +34,7 @@
       loadSidebar: true,
       subMaxLevel: 3,
       auto2top: true,
+      coverpage: true,
       search: {
         maxAge: 86400000,
         paths: 'auto'
