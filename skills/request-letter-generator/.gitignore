@@ -1,0 +1,19 @@
+# 忽略环境变量文件（如果有）
+.env
+
+# 忽略生成的临时文件
+*.tmp
+~$*.docx
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 忽略生成的文档（保留模板）
+请示_*.docx
+request_letter_*.docx
+
+# 注意：以下文件是 skill 必需的文件，请勿忽略
+# 请示函_模板.docx
+# image1.jpeg

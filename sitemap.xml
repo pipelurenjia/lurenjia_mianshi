@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- 入门指南 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/guide/start-here</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2025-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/guide/getting-started</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- 答题方法论 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/method/point-expand</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/method/improve-depth</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/method/practice-macro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/method/form-framework</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/method/practice-accumulate</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 题型专训 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/comprehensive-analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/organization-management</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/emergency-response</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/interpersonal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/simulation</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/allegory</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/question-types/research</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- 练习方法 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/practice/review</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/practice/practice-methods</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 表达能力 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/expression/expression-skills</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 心态调整 -->
+  <url>
+    <loc>https://lurenjia-mianshi.com/#/mindset/mindset</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

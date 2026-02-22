@@ -1,0 +1,34 @@
+# robots.txt - 允许AI爬虫访问
+# 用于GEO（Generative Engine Optimization）优化
+
+# 允许所有爬虫访问
+User-agent: *
+Allow: /
+
+# 专门放行AI相关爬虫（确保LLM/AI Agent可以获取内容）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# 站点地图位置
+Sitemap: https://lurenjia-mianshi.com/sitemap.xml
