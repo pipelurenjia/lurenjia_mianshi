@@ -11,6 +11,9 @@
   - [化虚为实：避免车轱辘话](/method/concrete.md)
   - [答题同质化怎么破](/method/break-homogenization.md)
 
+  - [提高深度：洞察事物内在联系](/method/improve-depth.md)
+  - [宏观练习：大量答题把握规律](/method/practice-macro.md)
+
 - 题型专训
   - [综合分析题](/question-types/comprehensive.md)
   - [组织管理题](/question-types/organization.md)
