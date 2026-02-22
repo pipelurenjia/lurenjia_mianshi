@@ -50,13 +50,15 @@
 - break-homogenization.md — 答题同质化怎么破
 
 ### 题型专训
-- comprehensive.md — 综合分析题
-- organization.md — 组织管理题
-- emergency.md — 应急应变题
-- relationship.md — 人际关系题
-- simulation.md — 情景模拟题
-- attitude-viewpoint.md — 态度观点题
-- impromptu-speech.md — 即兴演讲题
+- comprehensive.md — 综合分析题：是什么→为什么→怎么办
+- organization.md — 组织管理题：流程清晰，重点突出
+- emergency.md — 应急应变题：控制局面→解决问题→总结预防
+- relationship.md — 人际关系题：理解→沟通→改进
+- simulation.md — 情景模拟题：代入角色，自然表达
+- attitude-viewpoint.md — 态度观点题：来龙去脉法
+- impromptu-speech.md — 即兴演讲题：忘记演讲，正常答题
+- allegory.md — 漫画名言哲理题：看图说理，名言解读
+- research.md — 调研类题目：了解情况，提出对策
 
 ### 练习方法
 - review.md — 复盘方法论
