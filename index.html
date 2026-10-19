@@ -675,7 +675,8 @@
         function (hook, vm) {
           hook.doneEach(function () {
             var path = vm.route.path;
-            var isHome = !path || path === '/';
+            // /README 与 / 渲染同一份内容，按首页处理（避免重复收录与标题重复）
+            var isHome = !path || path === '/' || path === '/README';
 
             // 图片点击放大（只绑定一次）
             if (!window.__lrjZoomBound) {
@@ -723,8 +724,8 @@
               ? h1.textContent.trim() + ' | 一个路人甲 · 结构化面试'
               : '一个路人甲 · 结构化面试原创学习体系 | 免费自学资料';
 
-            // 封面和承接页本身不注入文末块
-            if (isHome || path.indexOf('resources') !== -1) return;
+            // 承接页本身不再注入文末块（首页正文需要，封面浮层不影响）
+            if (path.indexOf('resources') !== -1) return;
             var main = document.querySelector('.markdown-section');
             if (!main || main.querySelector('.lrj-footer-cta')) return;
             var box = document.createElement('div');
