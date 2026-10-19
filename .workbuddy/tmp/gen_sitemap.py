@@ -8,13 +8,14 @@ TODAY = "2026-10-19"
 
 # 从 _sidebar.md 提取真实导航页面（唯一可信来源）
 sidebar = open(os.path.join(ROOT, "_sidebar.md"), encoding="utf-8").read()
-links = re.findall(r"\[[^\]]*\]\((/[^)]+\.md)\)", sidebar)
+raw_links = re.findall(r"\[[^\]]*\]\((/[^)]+)\)", sidebar)
+links = [l[:-3] if l.endswith(".md") else l for l in raw_links]
 
 pages = []
 for link in links:
     rel = link.lstrip("/")
-    path = os.path.join(ROOT, rel.replace("/", os.sep))
-    pages.append((rel[:-3], os.path.exists(path)))  # strip .md
+    path = os.path.join(ROOT, rel.replace("/", os.sep) + ".md")
+    pages.append((rel, os.path.exists(path)))
 
 # 承接页（侧栏可能已包含，去重）
 seen = {r for r, _ in pages}
@@ -68,7 +69,7 @@ for route, exists in pages:
         continue
     lm = lastmod(route)
     lines += ['  <url>',
-              f'    <loc>{DOMAIN}/#/{route}</loc>',
+              f'    <loc>{DOMAIN}/{route}</loc>',
               '    <changefreq>weekly</changefreq>',
               f'    <priority>{priority(route)}</priority>']
     if lm:

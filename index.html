@@ -132,7 +132,7 @@
   }
   </script>
   
-  <link rel="stylesheet" href="assets/vue.css">
+  <link rel="stylesheet" href="/assets/vue.css">
   <style>
     section.cover,
     section.cover[style] {
@@ -257,9 +257,20 @@
       overflow: hidden;
       background: #fff;
     }
+    .lrj-card-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 320px;
+      padding: 12px;
+      background: #f7faf8;
+    }
     .lrj-card-media img {
-      width: 100%;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
       display: block;
+      border-radius: 6px;
     }
     .lrj-card-body {
       padding: 16px 20px 20px;
@@ -269,6 +280,124 @@
       padding: 0 !important;
       font-size: 1.15rem !important;
       border-bottom: none !important;
+    }
+
+    /* 课程截图三图行（统一高度，不裁切） */
+    .lrj-shot-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 1.2em 0;
+    }
+    .lrj-shot {
+      margin: 0 !important;
+      border: 1px solid #e6ece9;
+      border-radius: 10px;
+      background: #fff;
+      padding: 8px;
+    }
+    .lrj-shot-box {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fafcfb;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .lrj-shot-box img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    .lrj-shot figcaption {
+      font-size: 12px;
+      color: #99a8a1;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* 课程大纲（文字版标题） */
+    .lrj-plan-title {
+      margin: 1.6em 0 0.6em !important;
+      padding: 0 !important;
+      font-size: 1.1rem !important;
+      border-bottom: none !important;
+    }
+
+    /* 合集内页预览 */
+    .lrj-preview-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 1em 0 0.4em;
+    }
+    .lrj-preview-row figure {
+      margin: 0 !important;
+      text-align: center;
+    }
+    .lrj-preview-row img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      object-position: top center;
+      border: 1px solid #e6ece9;
+      border-radius: 8px;
+      display: block;
+      background: #fff;
+    }
+    .lrj-preview-row figcaption {
+      font-size: 12px;
+      color: #99a8a1;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+    .lrj-preview-hint {
+      text-align: center;
+      font-size: 12px;
+      color: #b0bcb6;
+      margin: 0.2em 0 1.4em !important;
+    }
+
+    /* 资料合集（横向大卡） */
+    .lrj-bundle {
+      display: flex;
+      gap: 24px;
+      border: 1px solid #dcebe2;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 1.5em 0;
+      background: #fff;
+    }
+    .lrj-bundle-media {
+      flex: 0 0 230px;
+      max-width: 230px;
+    }
+    .lrj-bundle-media img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .lrj-bundle-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .lrj-bundle-body h3 {
+      margin: 0 0 0.3em !important;
+      padding: 0 !important;
+      font-size: 1.25rem !important;
+      border-bottom: none !important;
+    }
+    .lrj-bundle-body ul {
+      margin: 0.6em 0;
+      padding-left: 1.2em;
+    }
+    .lrj-bundle-body li {
+      margin: 0.35em 0;
+      line-height: 1.7;
     }
     .lrj-img-row {
       display: grid;
@@ -414,7 +543,60 @@
       font-weight: 600;
     }
 
+    /* 图片点击放大 */
+    .markdown-section img {
+      cursor: zoom-in;
+    }
+    .lrj-footer-cta img,
+    .lrj-side-card img {
+      cursor: default;
+    }
+    #lrj-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(18, 24, 20, 0.92);
+      cursor: zoom-out;
+    }
+    #lrj-lightbox.active {
+      display: flex;
+    }
+    #lrj-lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 6px;
+      background: #fff;
+      cursor: zoom-out;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+    }
+    .lrj-lb-hint {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 14px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
     @media (max-width: 768px) {
+      .lrj-preview-row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .lrj-preview-row img {
+        height: 170px;
+      }
+      .markdown-section table {
+        font-size: 13px;
+      }
+      .markdown-section th,
+      .markdown-section td {
+        padding: 6px 8px;
+      }
       .lrj-hero {
         flex-direction: column;
         padding: 18px;
@@ -431,15 +613,45 @@
       .lrj-footer-cta {
         flex-wrap: wrap;
       }
+      .lrj-card-media {
+        height: 260px;
+      }
+      .lrj-shot-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .lrj-shot-box {
+        height: 210px;
+      }
+      .lrj-bundle {
+        flex-direction: column;
+        padding: 18px;
+      }
+      .lrj-bundle-media {
+        flex: none;
+        max-width: 240px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
 <body>
   <div id="app">加载中...</div>
   <script>
+    // 旧 hash 链接兼容：#/guide/xxx(.md) → /guide/xxx
+    (function () {
+      var h = window.location.hash;
+      if (h && h.indexOf('#/') === 0) {
+        var target = h.slice(1).replace(/\.md(?=$|\?)/, '');
+        window.history.replaceState(null, '', target);
+      }
+    })();
+  </script>
+  <script>
     window.$docsify = {
       name: '一个路人甲',
       repo: '',
+      routerMode: 'history',
       loadSidebar: '_sidebar.md',
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
@@ -455,8 +667,56 @@
         function (hook, vm) {
           hook.doneEach(function () {
             var path = vm.route.path;
-            // 封面和承接页本身不注入
-            if (!path || path === '/' || path.indexOf('resources') !== -1) return;
+            var isHome = !path || path === '/';
+
+            // 图片点击放大（只绑定一次）
+            if (!window.__lrjZoomBound) {
+              window.__lrjZoomBound = true;
+              document.addEventListener('click', function (e) {
+                var img = e.target && e.target.closest ? e.target.closest('.markdown-section img') : null;
+                if (!img || img.closest('.lrj-footer-cta')) return;
+                var box = document.getElementById('lrj-lightbox');
+                if (!box) {
+                  box = document.createElement('div');
+                  box.id = 'lrj-lightbox';
+                  box.innerHTML = '<img alt=""><div class="lrj-lb-hint">点击任意处或按 Esc 关闭</div>';
+                  document.body.appendChild(box);
+                  box.addEventListener('click', function () {
+                    box.classList.remove('active');
+                    document.body.style.overflow = '';
+                  });
+                }
+                var big = box.querySelector('img');
+                big.src = img.currentSrc || img.src;
+                big.alt = img.alt || '';
+                box.classList.add('active');
+                document.body.style.overflow = 'hidden';
+              });
+              document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape') return;
+                var box = document.getElementById('lrj-lightbox');
+                if (box && box.classList.contains('active')) {
+                  box.classList.remove('active');
+                  document.body.style.overflow = '';
+                }
+              });
+            }
+
+            // 每页更新 canonical（去掉 .md 与尾部斜杠）
+            var canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) {
+              var clean = isHome ? '/' : path.replace(/\.md$/, '').replace(/\/$/, '');
+              canonical.setAttribute('href', 'https://yigelurenjia.com' + clean);
+            }
+
+            // 每页更新标题
+            var h1 = document.querySelector('.markdown-section h1');
+            document.title = (h1 && !isHome)
+              ? h1.textContent.trim() + ' | 一个路人甲 · 结构化面试'
+              : '一个路人甲 · 结构化面试原创学习体系 | 免费自学资料';
+
+            // 封面和承接页本身不注入文末块
+            if (isHome || path.indexOf('resources') !== -1) return;
             var main = document.querySelector('.markdown-section');
             if (!main || main.querySelector('.lrj-footer-cta')) return;
             var box = document.createElement('div');
@@ -467,14 +727,14 @@
               '<p class="lrj-cta-title">配套资料与视频课</p>' +
               '<p class="lrj-cta-sub">思维总结 · 答题示例 · 视频课，网站内容之外更系统的整理</p>' +
               '</div>' +
-              '<a class="lrj-cta-link" href="#/guide/resources.md">查看</a>';
+              '<a class="lrj-cta-link" href="/guide/resources">查看</a>';
             main.appendChild(box);
           });
         }
       ]
     }
   </script>
-  <script src="assets/docsify.js"></script>
-  <script src="assets/search.min.js"></script>
+  <script src="/assets/docsify.js"></script>
+  <script src="/assets/search.min.js"></script>
 </body>
 </html>

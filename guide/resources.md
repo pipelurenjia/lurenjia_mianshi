@@ -17,55 +17,117 @@
     <h2>结构化面试视频课</h2>
     <p class="lrj-price">¥168</p>
     <p class="lrj-price-note">标价为原价 · 扫码进店可叠加平台优惠</p>
-    <p>不止讲题型思路，更讲思维方法。和网站免费内容同一套体系，但讲得更细、更系统，配合课堂实录和配套讲义，适合自学没有方向、报班没效果的同学。</p>
+    <p>全部课程 237 分钟，不到 4 小时。没有金句、没有模板、没有万能词，只讲逻辑和思路。适合自学没方向、报班没效果，或者想要一套完整方法论的你。</p>
     <ul class="lrj-feature-list">
-      <li><b>方法论先行</b>：布点法、观点展开，先建框架再练题</li>
+      <li><b>逻辑优先</b>：不靠话术和套话，讲的是思路怎么长出来</li>
+      <li><b>学习方法论专章</b>：这部分以前只在一对一课上讲（400 元一节课，好评率 100%），这次单独录了一整章</li>
       <li><b>四大题型全覆盖</b>：综合分析 / 组织管理 / 人际关系 / 应急应变</li>
-      <li><b>配套讲义与思维导图</b>：每章都有图，看完能自己画出来</li>
-      <li><b>课堂实录</b>：真实上课状态，不是念稿</li>
+      <li><b>篇幅精简</b>：理论课越短越好，省下的时间留给开口练习</li>
+      <li><b>看完不满意可退</b>：老规矩，觉得不值直接找我</li>
     </ul>
-    <a class="lrj-btn" href="#/guide/resources.md?id=怎么买">怎么买 ↓</a>
+    <a class="lrj-btn" href="/guide/resources?id=怎么买">怎么买 ↓</a>
   </div>
 </div>
 
-<div class="lrj-img-row">
-  <figure>
-    <img src="/assets/img/course-mindmap.jpg" alt="课程思维导图示例">
-    <figcaption>课程思维导图示例</figcaption>
+<div class="lrj-shot-row">
+  <figure class="lrj-shot">
+    <div class="lrj-shot-box"><img src="/assets/img/course-notes.jpg" alt="课程讲义"></div>
+    <figcaption>课程讲义</figcaption>
   </figure>
-  <figure>
-    <img src="/assets/img/course-chapters.jpg" alt="课程章节目录">
-    <figcaption>课程章节目录</figcaption>
+  <figure class="lrj-shot">
+    <div class="lrj-shot-box"><img src="/assets/img/course-mindmap.jpg" alt="上课思维导图"></div>
+    <figcaption>上课思维导图</figcaption>
+  </figure>
+  <figure class="lrj-shot">
+    <div class="lrj-shot-box"><img src="/assets/img/course-live.jpg" alt="课堂实录"></div>
+    <figcaption>课堂实录</figcaption>
   </figure>
 </div>
+
+<h3 class="lrj-plan-title">课程大纲</h3>
+
+| 章节 | 时长 | 讲什么 |
+|------|------|--------|
+| 绪论 | 13 分钟 | 教学特点与课程目标、结构化面试的题型分类 |
+| 学习方法论 | 72 分钟 | 实战导向、抓大放小；把「逻辑构建」和「语言组织」拆开训练，配套训练方法与工具 |
+| 综合分析 | 35 分钟 | 来龙去脉法：是什么 → 为什么 → 怎么办；思路进阶；虚实结合 |
+| 组织管理 | 45 分钟 | 以事前-事中-事后为主线，怎么抓住重点，问题导向的体系化方案 |
+| 人际关系 | 40 分钟 | 情理行三步走；隐藏考察点：视角转化 |
+| 应急应变 | 28 分钟 | 由浅入深的处理顺序与基本分析思路 |
+
+合计 **237 分钟，不到 4 小时**。理论课越短越好，省下的时间都该拿去开口练习。
 
 ---
 
-<!-- 资料合集 -->
+<!-- 文字资料 -->
+
+<div class="lrj-bundle">
+  <div class="lrj-bundle-media">
+    <img src="/assets/img/materials-cover.jpg" alt="结构化面试文字资料合集">
+  </div>
+  <div class="lrj-bundle-body">
+    <h3>文字资料合集</h3>
+    <p class="lrj-price">¥66.6</p>
+    <p class="lrj-price-note">标价为原价 · 扫码进店可叠加平台优惠</p>
+    <p>一次拿到五份材料，从入门到考前都够用：</p>
+    <ul>
+      <li><b>《答题思维总结》</b>约 3 万字，五类题型的答题思路逐一梳理，每页都是能直接上手用的框架</li>
+      <li><b>《答题示例（逐字稿）》</b>经典 32 题，共 2.7 万字，每题都是我亲自答、亲手写的</li>
+      <li><b>《面试经验帖》</b>自己备考的一些方法和思路总结，小白先看这个</li>
+      <li><b>《个人笔记素材库》</b>表格版，附赠 Anki 卡片集</li>
+      <li><b>《政策理论思维导图》</b>PNG 图片 + XMind 源文件</li>
+    </ul>
+    <p>材料原创率 100%，收到最多的评价是「醍醐灌顶」。买前建议问自己一句：愿不愿意配合练习用。答案是不愿意，那就先把网站上的免费内容吃透。</p>
+  </div>
+</div>
+
+<div class="lrj-preview-row">
+  <figure>
+    <img src="/assets/img/preview-summary-p1.jpg" alt="思维总结内页：综合分析框架">
+    <figcaption>思维总结 · 综合分析框架</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/preview-summary-toc.jpg" alt="思维总结目录">
+    <figcaption>思维总结 · 目录</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/preview-dictation-toc.jpg" alt="32题逐字稿目录">
+    <figcaption>逐字稿 · 32 题目录</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/preview-dictation.jpg" alt="逐字稿答题示例内页">
+    <figcaption>逐字稿 · 答题示例</figcaption>
+  </figure>
+</div>
+
+<p class="lrj-preview-hint">点击任意图片可查看大图</p>
 
 <div class="lrj-grid">
-  <div class="lrj-card">
-    <div class="lrj-card-media">
-      <img src="/assets/img/materials-cover.jpg" alt="结构化面试文字资料合集">
-    </div>
-    <div class="lrj-card-body">
-      <h3>文字资料合集</h3>
-      <p class="lrj-price">¥66.6</p>
-      <p class="lrj-price-note">标价为原价 · 扫码进店可叠加平台优惠</p>
-      <p>《思维总结》+《答题示例》合订。思维总结用最精炼的语言把四类题型的答题框架讲清楚；答题示例提供完整逐字稿，先看两遍背框架，再对照逐字稿练，亲测有效。</p>
-    </div>
-  </div>
   <div class="lrj-card">
     <div class="lrj-card-media">
       <img src="/assets/img/materials-toc.jpg" alt="思维总结目录">
     </div>
     <div class="lrj-card-body">
-      <h3>思维总结（单卖）</h3>
-      <p class="lrj-price-note">店内单独出售 · 价格见店铺</p>
-      <p>32 页，按综合分析、组织管理、人际关系、应急应变四类题型整理答题思路，每页都是可以直接上手用的框架，不绕弯子。</p>
+      <h3>思维总结（可单卖）</h3>
+      <p class="lrj-price-note">店内也有单独出售的链接 · 价格见店铺</p>
+      <p>约 3 万字，不算多，按综合分析、组织管理、人际关系、应急应变、认知观点五类题型整理答题思路，每页都是可以直接上手用的框架，干货。</p>
+      <p><b>怎么用</b>：无需背诵。上手直接看，哪个题型答不好就重点翻哪一章；考前再看两遍，思路会清晰很多。</p>
+    </div>
+  </div>
+  <div class="lrj-card">
+    <div class="lrj-card-media">
+      <img src="/assets/img/materials-dictation.jpg" alt="32题逐字稿示例">
+    </div>
+    <div class="lrj-card-body">
+      <h3>32 题逐字稿（可单卖）</h3>
+      <p class="lrj-price-note">店内也有单独出售的链接 · 价格见店铺</p>
+      <p>32 道经典母题，态度观点 5 道、社会现象 6 道、漫画 3 道、组织管理 7 道、人际关系 6 道、应急应变 5 道，共 2.7 万字，都是一题一题写出来的。</p>
+      <p><b>怎么用</b>：不建议背。先当思路参考——自己答一遍，再看我怎么搭结构；再当复述材料——记下主要观点，用自己的话讲一遍。你会发现我没有套同一个模板，每道题的思路都是活的。</p>
     </div>
   </div>
 </div>
+
+
 
 > 店内目前共 4 件商品在售，扫码进店可以查看全部。
 
@@ -127,7 +189,7 @@
 
 ---
 
-如果暂时不需要，回去继续练：[从零开始怎么学](/guide/start-here.md) · [复盘方法论](/practice/review.md) · [布点法](/method/point-method.md)
+如果暂时不需要，回去继续练：[从零开始怎么学](/guide/start-here) · [复盘方法论](/practice/review) · [布点法](/method/point-method)
 
 ✅
 我是路人甲

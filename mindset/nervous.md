@@ -138,9 +138,9 @@
 
 ## 相关阅读
 
-- [焦虑缓解方法](/mindset/anxiety.md)
-- [备考节奏把控](/mindset/pace.md)
-- [游击战法：快速入门](/guide/guerrilla.md)
+- [焦虑缓解方法](/mindset/anxiety)
+- [备考节奏把控](/mindset/pace)
+- [游击战法：快速入门](/guide/guerrilla)
 
 ---
 

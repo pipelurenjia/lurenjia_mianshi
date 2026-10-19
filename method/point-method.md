@@ -158,9 +158,9 @@
 
 ## 相关阅读
 
-- [观点展开：怎么说清楚](/method/expand.md)
-- [广度深度：展不开怎么办](/method/breadth-depth.md)
-- [化虚为实：避免车轱辘话](/method/concrete.md)
+- [观点展开：怎么说清楚](/method/expand)
+- [广度深度：展不开怎么办](/method/breadth-depth)
+- [化虚为实：避免车轱辘话](/method/concrete)
 ## 补充内容
 
 ### 综合分析题怎么形成思路

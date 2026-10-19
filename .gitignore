@@ -1,0 +1,3 @@
+# 工作区临时文件与验证产物（不纳入版本管理）
+.workbuddy/tmp/
+.workbuddy/screenshots/

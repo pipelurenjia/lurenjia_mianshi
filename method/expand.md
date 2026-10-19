@@ -253,9 +253,9 @@
 
 ## 相关阅读
 
-- [布点法：如何快速破题](/method/point-method.md)
-- [广度深度：展不开怎么办](/method/breadth-depth.md)
-- [化虚为实：避免车轱辘话](/method/concrete.md)
+- [布点法：如何快速破题](/method/point-method)
+- [广度深度：展不开怎么办](/method/breadth-depth)
+- [化虚为实：避免车轱辘话](/method/concrete)
 
 ---
 

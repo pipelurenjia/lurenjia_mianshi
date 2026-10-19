@@ -14,7 +14,7 @@
 - 不知道从哪个题型开始
 
 **推荐路径**：
-1. 先看 [游击战法：快速入门](/guide/guerrilla.md) —— 了解整体框架
+1. 先看 [游击战法：快速入门](/guide/guerrilla) —— 了解整体框架
 2. 了解基本题型思路（综合分析、组织管理、应急应变、人际关系）
 3. 直接开始答题练习，不用等"准备好"
 
@@ -30,8 +30,8 @@
 - 答题没有逻辑，东一句西一句
 
 **推荐路径**：
-1. 重点看 [布点法：如何快速破题](/method/point-method.md)
-2. 学习 [观点展开：怎么说清楚](/method/expand.md)
+1. 重点看 [布点法：如何快速破题](/method/point-method)
+2. 学习 [观点展开：怎么说清楚](/method/expand)
 3. 开始大量练习，边练边复盘
 
 **预计时间**：2-3周
@@ -46,8 +46,8 @@
 - 缺乏深度，同质化严重
 
 **推荐路径**：
-1. 学习 [广度深度：展不开怎么办](/method/breadth-depth.md)
-2. 掌握 [化虚为实：避免车轱辘话](/method/concrete.md)
+1. 学习 [广度深度：展不开怎么办](/method/breadth-depth)
+2. 掌握 [化虚为实：避免车轱辘话](/method/concrete)
 3. 进行专项题型训练
 
 **预计时间**：2-4周
@@ -134,13 +134,13 @@
 
 | 我现在需要 | 查看内容 |
 |-----------|---------|
-| 快速入门了解整体 | [游击战法](/guide/guerrilla.md) |
-| 明天就考试了 | [急救包](/guide/emergency.md) |
-| 破题没思路 | [布点法](/method/point-method.md) |
-| 展开没内容 | [观点展开](/method/expand.md) |
-| 答题太空洞 | [化虚为实](/method/concrete.md) |
-| 复盘效率低 | [复盘方法论](/practice/review.md) |
-| 紧张说不出 | [考场紧张怎么办](/mindset/nervous.md) |
+| 快速入门了解整体 | [游击战法](/guide/guerrilla) |
+| 明天就考试了 | [急救包](/guide/emergency) |
+| 破题没思路 | [布点法](/method/point-method) |
+| 展开没内容 | [观点展开](/method/expand) |
+| 答题太空洞 | [化虚为实](/method/concrete) |
+| 复盘效率低 | [复盘方法论](/practice/review) |
+| 紧张说不出 | [考场紧张怎么办](/mindset/nervous) |
 
 ---
 

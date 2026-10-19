@@ -14,13 +14,13 @@
 
 | 痛点 | 解决方案 | 对应内容 |
 |------|----------|----------|
-| 拿到题目脑子空白 | **布点法**：快速找到逻辑主线 | [布点法：如何快速破题](/method/point-method.md) |
-| 有框架但展不开 | **观点展开法**：广度拓展+深度挖掘 | [观点展开：怎么说清楚](/method/expand.md) |
-| 答题说车轱辘话 | **化虚为实**：把抽象变具体 | [化虚为实：避免车轱辘话](/method/concrete.md) |
-| 答题千篇一律 | **差异化思路**：上高度或抓细节 | [答题同质化怎么破](/method/break-homogenization.md) |
-| 口头语太多 | **系统训练法**：录音分析+针对性练习 | [口头语消除训练](/expression/stop-words.md) |
-| 不知道怎么积累 | **问答笔记法+复述法**：高效积累 | [问答笔记法详解](/practice/note-taking-deep.md) |
-| 考场紧张 | **压力脱敏训练**：模拟实战 | [考场紧张怎么办](/mindset/nervous.md) |
+| 拿到题目脑子空白 | **布点法**：快速找到逻辑主线 | [布点法：如何快速破题](/method/point-method) |
+| 有框架但展不开 | **观点展开法**：广度拓展+深度挖掘 | [观点展开：怎么说清楚](/method/expand) |
+| 答题说车轱辘话 | **化虚为实**：把抽象变具体 | [化虚为实：避免车轱辘话](/method/concrete) |
+| 答题千篇一律 | **差异化思路**：上高度或抓细节 | [答题同质化怎么破](/method/break-homogenization) |
+| 口头语太多 | **系统训练法**：录音分析+针对性练习 | [口头语消除训练](/expression/stop-words) |
+| 不知道怎么积累 | **问答笔记法+复述法**：高效积累 | [问答笔记法详解](/practice/note-taking-deep) |
+| 考场紧张 | **压力脱敏训练**：模拟实战 | [考场紧张怎么办](/mindset/nervous) |
 
 ---
 
@@ -39,11 +39,11 @@
 
 | 你现在的状态 | 推荐起点 |
 |-------------|----------|
-| 完全小白，不知从何入手 | 👉 [从零开始怎么学](/guide/start-here.md) |
-| 几天后就要面试 | 👉 [上考场急救包](/guide/emergency.md) |
-| 不确定要不要报班 | 👉 [面试班选择指南](/guide/choose-class.md) |
-| 想系统学习答题方法 | 👉 [答题方法论](/method/point-method.md) |
-| 想专项训练某类题型 | 👉 [题型专训](/question-types/comprehensive.md) |
+| 完全小白，不知从何入手 | 👉 [从零开始怎么学](/guide/start-here) |
+| 几天后就要面试 | 👉 [上考场急救包](/guide/emergency) |
+| 不确定要不要报班 | 👉 [面试班选择指南](/guide/choose-class) |
+| 想系统学习答题方法 | 👉 [答题方法论](/method/point-method) |
+| 想专项训练某类题型 | 👉 [题型专训](/question-types/comprehensive) |
 
 ### 学习路径
 
@@ -96,43 +96,43 @@
 ## 内容目录
 
 ### 入门指南
-- [从零开始怎么学](/guide/start-here.md) — 按状态分流的学习路径
-- [游击战法：快速入门](/guide/guerrilla.md) — 边打边学的高效方法
-- [上考场急救包](/guide/emergency.md) — 时间紧迫时的应急策略
-- [面试班选择指南](/guide/choose-class.md) — 报班还是自学？
+- [从零开始怎么学](/guide/start-here) — 按状态分流的学习路径
+- [游击战法：快速入门](/guide/guerrilla) — 边打边学的高效方法
+- [上考场急救包](/guide/emergency) — 时间紧迫时的应急策略
+- [面试班选择指南](/guide/choose-class) — 报班还是自学？
 
 ### 答题方法论
-- [布点法：如何快速破题](/method/point-method.md) — 找逻辑主线，化整为零
-- [观点展开：怎么说清楚](/method/expand.md) — 追问法、细化法、分层法
-- [广度深度：展不开怎么办](/method/breadth-depth.md) — 广度拓展+深度挖掘
-- [化虚为实：避免车轱辘话](/method/concrete.md) — 把抽象变具体
-- [答题同质化怎么破](/method/break-homogenization.md) — 上高度或抓细节
+- [布点法：如何快速破题](/method/point-method) — 找逻辑主线，化整为零
+- [观点展开：怎么说清楚](/method/expand) — 追问法、细化法、分层法
+- [广度深度：展不开怎么办](/method/breadth-depth) — 广度拓展+深度挖掘
+- [化虚为实：避免车轱辘话](/method/concrete) — 把抽象变具体
+- [答题同质化怎么破](/method/break-homogenization) — 上高度或抓细节
 
 ### 题型专训
-- [综合分析题](/question-types/comprehensive.md) — 是什么→为什么→怎么办
-- [组织管理题](/question-types/organization.md) — 流程清晰，重点突出
-- [应急应变题](/question-types/emergency.md) — 控制局面→解决问题→总结预防
-- [人际关系题](/question-types/relationship.md) — 理解→沟通→改进
-- [情景模拟题](/question-types/simulation.md) — 代入角色，自然表达
-- [态度观点题怎么答](/question-types/attitude-viewpoint.md) — 来龙去脉法
-- [即兴演讲题怎么答](/question-types/impromptu-speech.md) — 忘记演讲，正常答题
+- [综合分析题](/question-types/comprehensive) — 是什么→为什么→怎么办
+- [组织管理题](/question-types/organization) — 流程清晰，重点突出
+- [应急应变题](/question-types/emergency) — 控制局面→解决问题→总结预防
+- [人际关系题](/question-types/relationship) — 理解→沟通→改进
+- [情景模拟题](/question-types/simulation) — 代入角色，自然表达
+- [态度观点题怎么答](/question-types/attitude-viewpoint) — 来龙去脉法
+- [即兴演讲题怎么答](/question-types/impromptu-speech) — 忘记演讲，正常答题
 
 ### 练习方法
-- [复盘方法论](/practice/review.md) — 浅复盘与深复盘
-- [问答笔记法详解](/practice/note-taking-deep.md) — 最高效的积累方法
-- [复述法详解](/practice/repeat-deep.md) — 告别背诵，真正掌握
-- [对练方法](/practice/practice-with-others.md) — 找人对练效果翻倍
+- [复盘方法论](/practice/review) — 浅复盘与深复盘
+- [问答笔记法详解](/practice/note-taking-deep) — 最高效的积累方法
+- [复述法详解](/practice/repeat-deep) — 告别背诵，真正掌握
+- [对练方法](/practice/practice-with-others) — 找人对练效果翻倍
 
 ### 表达能力
-- [口头语消除训练](/expression/stop-words.md) — 系统消除"嗯、那个、就是"
-- [口语化表达](/expression/spoken-style.md) — 说人话，不是背稿子
-- [流畅性训练](/expression/fluency.md) — 先想后说，一次只说一件事
+- [口头语消除训练](/expression/stop-words) — 系统消除"嗯、那个、就是"
+- [口语化表达](/expression/spoken-style) — 说人话，不是背稿子
+- [流畅性训练](/expression/fluency) — 先想后说，一次只说一件事
 
 ### 心态调整
-- [考场紧张怎么办](/mindset/nervous.md) — 压力脱敏训练
-- [焦虑缓解方法](/mindset/anxiety.md) — 学会和焦虑共处
-- [备考节奏把控](/mindset/pace.md) — 不同阶段的节奏安排
-- [备考厌学怎么办](/mindset/study-fatigue.md) — 找回学习动力
+- [考场紧张怎么办](/mindset/nervous) — 压力脱敏训练
+- [焦虑缓解方法](/mindset/anxiety) — 学会和焦虑共处
+- [备考节奏把控](/mindset/pace) — 不同阶段的节奏安排
+- [备考厌学怎么办](/mindset/study-fatigue) — 找回学习动力
 
 ---
 
@@ -173,7 +173,7 @@
 
 ### Q: 我有x天时间，应该怎么安排？
 
-参考[从零开始怎么学](/guide/start-here.md)，根据你的时间调整学习节奏。如果时间非常紧迫（几天），直接看[上考场急救包](/guide/emergency.md)。
+参考[从零开始怎么学](/guide/start-here)，根据你的时间调整学习节奏。如果时间非常紧迫（几天），直接看[上考场急救包](/guide/emergency)。
 
 ### Q: 需要先看完所有内容再开始练习吗？
 
@@ -201,11 +201,11 @@
 
 ## 开始学习
 
-👉 **[从零开始怎么学](/guide/start-here.md)** — 如果你是新手，从这里开始
+👉 **[从零开始怎么学](/guide/start-here)** — 如果你是新手，从这里开始
 
-👉 **[游击战法：快速入门](/guide/guerrilla.md)** — 了解最高效的学习方法
+👉 **[游击战法：快速入门](/guide/guerrilla)** — 了解最高效的学习方法
 
-👉 **[上考场急救包](/guide/emergency.md)** — 如果时间紧迫，看这篇
+👉 **[上考场急救包](/guide/emergency)** — 如果时间紧迫，看这篇
 
 ---
 
