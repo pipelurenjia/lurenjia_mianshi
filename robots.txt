@@ -106,4 +106,4 @@ User-agent: DeepSeekBot
 Allow: /
 
 # ========== 站点地图 ==========
-Sitemap: https://lurenjia-mianshi.com/sitemap.xml
+Sitemap: https://yigelurenjia.com/sitemap.xml

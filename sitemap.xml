@@ -2,111 +2,201 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- 首页 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/</loc>
+    <loc>https://yigelurenjia.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2026-10-19</lastmod>
   </url>
-  
-  <!-- 入门指南 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/#/guide/start-here</loc>
+    <loc>https://yigelurenjia.com/#/guide/start-here</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-02-22</lastmod>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/guide/getting-started</loc>
+    <loc>https://yigelurenjia.com/#/guide/guerrilla</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
-  
-  <!-- 答题方法论 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/#/method/point-expand</loc>
+    <loc>https://yigelurenjia.com/#/guide/emergency</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/method/improve-depth</loc>
+    <loc>https://yigelurenjia.com/#/guide/choose-class</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/method/practice-macro</loc>
+    <loc>https://yigelurenjia.com/#/method/point-method</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/method/expand</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/method/breadth-depth</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/method/concrete</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/method/break-homogenization</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/method/improve-depth</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/method/practice-macro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/question-types/comprehensive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/method/form-framework</loc>
+    <loc>https://yigelurenjia.com/#/question-types/organization</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/method/practice-accumulate</loc>
+    <loc>https://yigelurenjia.com/#/question-types/emergency</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
-  
-  <!-- 题型专训 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/comprehensive-analysis</loc>
+    <loc>https://yigelurenjia.com/#/question-types/relationship</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/organization-management</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/emergency-response</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/interpersonal</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/simulation</loc>
+    <loc>https://yigelurenjia.com/#/question-types/simulation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/allegory</loc>
+    <loc>https://yigelurenjia.com/#/question-types/attitude-viewpoint</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/question-types/research</loc>
+    <loc>https://yigelurenjia.com/#/question-types/impromptu-speech</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
-  
-  <!-- 练习方法 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/#/practice/review</loc>
+    <loc>https://yigelurenjia.com/#/question-types/allegory</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/question-types/research</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/practice/review</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
   <url>
-    <loc>https://lurenjia-mianshi.com/#/practice/practice-methods</loc>
+    <loc>https://yigelurenjia.com/#/practice/note-taking-deep</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
-  
-  <!-- 表达能力 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/#/expression/expression-skills</loc>
+    <loc>https://yigelurenjia.com/#/practice/repeat-deep</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
   </url>
-  
-  <!-- 心态调整 -->
   <url>
-    <loc>https://lurenjia-mianshi.com/#/mindset/mindset</loc>
+    <loc>https://yigelurenjia.com/#/practice/practice-with-others</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/expression/stop-words</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/expression/spoken-style</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/expression/fluency</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/mindset/nervous</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/mindset/anxiety</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/mindset/pace</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/mindset/study-fatigue</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://yigelurenjia.com/#/guide/resources</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-10-19</lastmod>
   </url>
 </urlset>
