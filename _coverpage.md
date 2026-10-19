@@ -19,6 +19,8 @@
 
 **全部免费，让每个人都能通过自学上岸**
 
+<div class="lrj-cover-cta"><strong>配套资料与视频课</strong>：<a href="./guide/resources.md">思维总结 · 答题示例 · 视频课</a> · 小红书 @pipelurenjia</div>
+
 
 ---
 

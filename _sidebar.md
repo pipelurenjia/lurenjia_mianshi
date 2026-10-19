@@ -41,3 +41,14 @@
   - [焦虑缓解方法](/mindset/anxiety.md)
   - [备考节奏把控](/mindset/pace.md)
   - [备考厌学怎么办](/mindset/study-fatigue.md)
+
+- 资料与课程
+  - [配套资料与视频课](/guide/resources.md)
+
+<div class="lrj-side-card">
+  <img src="/assets/img/logo.png" alt="一个路人甲">
+  <p class="lrj-side-name">一个路人甲</p>
+  <p class="lrj-side-desc">自学面试93分上岸 · 小红书 @pipelurenjia</p>
+  <a class="lrj-side-btn" href="/guide/resources.md">资料与课程 →</a>
+</div>
+

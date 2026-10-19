@@ -35,16 +35,24 @@ This is a pure content repository - no JavaScript/TypeScript code, no tests, no 
 
 ```
 /
-├── index.html          # Docsify entry point
-├── _sidebar.md         # Navigation sidebar config
-├── _cover.md           # Cover page config
-├── framework/          # 面试框架 (Interview frameworks)
-│   └── viewpoint.md
-│   └── structure.md
-├── skills/             # 面试技巧 (Interview skills)
-│   ├── talk.md
-│   └── review.md
-└── AGENTS.md           # This file
+├── index.html          # Docsify 入口（SEO/GEO 结构化数据 + 主题样式 + 引流插件）
+├── _sidebar.md         # 侧栏导航（6 大分类 + 资料与课程 + 关于我卡片）
+├── _coverpage.md       # 封面页
+├── assets/
+│   ├── docsify.js      # Docsify 4.13.1（本地）
+│   ├── search.min.js   # 搜索插件
+│   ├── vue.css         # 主题
+│   └── img/            # 引流组件用图（二维码、商品图、好评，均已压缩）
+├── guide/              # 入门指南 + 资料与课程承接页（resources.md）
+├── method/             # 答题方法论
+├── question-types/     # 题型专训
+├── practice/           # 练习方法
+├── expression/         # 表达能力
+├── mindset/            # 心态调整
+├── framework/          # 旧结构遗留（未挂导航）
+├── notes/              # 原始笔记素材
+├── 内容素材/            # 小红书素材
+└── AGENTS.md           # 本文件
 ```
 
 ---
@@ -127,8 +135,24 @@ To add new pages:
 ## Theme Customization
 
 Custom styles in `index.html`:
-- Cover gradient: `linear-gradient(135deg, #667eea 0%, #764ba2 100%)`
-- Theme: Vue.css from unpkg docsify
+- Cover gradient: `linear-gradient(315deg, #B3B8FE 0%, #D4DCD7 50%, #F2FCB4 100%)`
+- Brand green: `#348f6b`（按钮、价格、强调色统一用这个）
+- Theme: Vue.css（本地 `assets/vue.css`，非 unpkg）
+
+### 引流组件（勿随性改动）
+
+转化相关组件统一使用 `lrj-` 前缀，样式集中在 `index.html` 的 `<style>` 末尾：
+
+| 类名 | 用途 | 位置 |
+|------|------|------|
+| `.lrj-cover-cta` | 封面底部资料入口 | `_coverpage.md` |
+| `.lrj-side-card` | 侧栏底部常驻「关于我」卡片 | `_sidebar.md` |
+| `.lrj-hero` / `.lrj-grid` / `.lrj-card` | 承接页主推卡与商品卡 | `guide/resources.md` |
+| `.lrj-quote` | 买家评价引用 | `guide/resources.md` |
+| `.lrj-buy` / `.lrj-qr-card` | 二维码转化区 | `guide/resources.md` |
+| `.lrj-footer-cta` | 全站文末注入块 | `index.html` 的 docsify 插件自动注入 |
+
+`index.html` 中 `$docsify.plugins` 会在每个内容页末尾自动注入 `.lrj-footer-cta`；封面与 `guide/resources.md` 本身自动跳过。图片资源在 `assets/img/`，全部经过压缩（单张 < 120KB）。
 
 ---
 
