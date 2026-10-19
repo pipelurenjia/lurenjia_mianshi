@@ -17,6 +17,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#348f6b">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM96WNVJZ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HM96WNVJZ2', { send_page_view: true });
+    // 记录当前路径，供 SPA 路由切换时判断是否需要补发 page_view
+    window.__lrjLastGaPath = (location.pathname.replace(/\/$/, '') || '/').replace(/^\/README$/, '/');
+  </script>
   
   <!-- GEO优化: 结构化数据 -->
   <script type="application/ld+json">
@@ -711,6 +722,35 @@
               });
             }
 
+            // 转化事件埋点：GA4 + 百度统计双发（只绑定一次）
+            if (!window.__lrjTrackBound) {
+              window.__lrjTrackBound = true;
+              window.lrjTrack = function (name, params) {
+                try {
+                  if (typeof gtag === 'function') gtag('event', name, params || {});
+                  if (window._hmt) window._hmt.push(['_trackEvent', 'convert', name, location.pathname]);
+                } catch (err) { /* 统计失败不影响页面 */ }
+              };
+              document.addEventListener('click', function (e) {
+                var el = e.target && e.target.closest ? e.target.closest('[data-lrj-event], a') : null;
+                if (!el) return;
+                var ev = el.getAttribute('data-lrj-event');
+                if (!ev && el.tagName === 'A') {
+                  var href = el.getAttribute('href') || '';
+                  if (href.indexOf('/guide/resources') === 0 || href.indexOf('./guide/resources') === 0) {
+                    ev = 'click_cta_resources';
+                  } else if (href.indexOf('xhslink') !== -1) {
+                    ev = 'click_buy_xhs';
+                  }
+                }
+                if (!ev) return;
+                window.lrjTrack(ev, {
+                  link_text: (el.textContent || '').trim().slice(0, 40),
+                  page_path: location.pathname
+                });
+              });
+            }
+
             // 每页更新 canonical（去掉 .md 与尾部斜杠）
             var canonical = document.querySelector('link[rel="canonical"]');
             if (canonical) {
@@ -723,6 +763,23 @@
             document.title = (h1 && !isHome)
               ? h1.textContent.trim() + ' | 一个路人甲 · 结构化面试'
               : '一个路人甲 · 结构化面试原创学习体系 | 免费自学资料';
+
+            // SPA 路由切换时补发 page_view（GA4 + 百度统计；首次加载已由各自脚本自动上报）
+            var gaPath = isHome ? '/' : path.replace(/\.md$/, '');
+            if (window.__lrjLastGaPath !== gaPath) {
+              window.__lrjLastGaPath = gaPath;
+              if (typeof gtag === 'function') {
+                gtag('event', 'page_view', {
+                  page_title: document.title,
+                  page_path: gaPath,
+                  page_location: location.origin + gaPath
+                });
+              }
+              if (window._hmt) {
+                window._hmt.push(['_setAutoPageview', false]);
+                window._hmt.push(['_trackPageview', gaPath]);
+              }
+            }
 
             // 承接页本身不再注入文末块（首页正文需要，封面浮层不影响）
             if (path.indexOf('resources') !== -1) return;
@@ -745,5 +802,22 @@
   </script>
   <script src="/assets/docsify.js"></script>
   <script src="/assets/search.min.js"></script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "cfa482f444494871a502b7267648409d", "spa": true}'></script>
+  <!-- End Cloudflare Web Analytics -->
+
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2cca587794a1cfb3a439deb6a43fa2e2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!-- End 百度统计 -->
 </body>
 </html>
