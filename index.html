@@ -485,6 +485,84 @@
       margin: 0 !important;
     }
 
+    /* 口令复制组件 */
+    .lrj-copy {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      border: 1px solid #dcebe2;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 1em 0 0.6em;
+      background: #fbfdfc;
+    }
+    .lrj-copy-main {
+      flex: 1;
+      min-width: 220px;
+    }
+    .lrj-copy-url {
+      display: block;
+      font-size: 13px;
+      color: #2d5a47;
+      background: #fff;
+      border: 1px solid #e6ece9;
+      border-radius: 6px;
+      padding: 6px 10px;
+      word-break: break-all;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .lrj-copy-hint {
+      font-size: 12px;
+      color: #99a8a1;
+      margin: 6px 0 0 !important;
+    }
+    .lrj-copy-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .lrj-copy-btn,
+    .lrj-open-btn {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 9px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      cursor: pointer;
+      text-decoration: none !important;
+      border: 1px solid #348f6b;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .lrj-copy-btn {
+      background: #fff;
+      color: #348f6b !important;
+    }
+    .lrj-copy-btn:hover {
+      background: #f0f7f3;
+    }
+    .lrj-copy-btn.is-ok {
+      background: #348f6b;
+      color: #fff !important;
+    }
+    .lrj-copy-btn.is-fail {
+      border-color: #d9534f;
+      color: #d9534f !important;
+    }
+    .lrj-open-btn {
+      background: #348f6b;
+      color: #fff !important;
+    }
+    .lrj-open-btn:hover {
+      background: #2d7a5c;
+    }
+    .lrj-copy-note {
+      font-size: 13px;
+      color: #7a9187;
+    }
+
     /* 侧栏常驻卡片 */
     .lrj-side-card {
       margin: 20px 12px;
@@ -651,6 +729,18 @@
         max-width: 240px;
         margin: 0 auto;
       }
+      .lrj-copy {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+      }
+      .lrj-copy-actions {
+        flex-direction: column;
+      }
+      .lrj-copy-btn,
+      .lrj-open-btn {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -748,6 +838,50 @@
                   link_text: (el.textContent || '').trim().slice(0, 40),
                   page_path: location.pathname
                 });
+              });
+
+              // 一键复制口令（同步 execCommand 优先，兼容微信内置浏览器；再退到 Clipboard API）
+              document.addEventListener('click', function (e) {
+                var btn = e.target && e.target.closest ? e.target.closest('[data-lrj-copy]') : null;
+                if (!btn) return;
+                e.preventDefault();
+                var text = btn.getAttribute('data-lrj-copy') || '';
+                var label = btn.textContent;
+                var settle = function (ok) {
+                  btn.textContent = ok ? '已复制，去小红书粘贴' : '复制失败，请长按选中';
+                  btn.classList.add(ok ? 'is-ok' : 'is-fail');
+                  setTimeout(function () {
+                    btn.textContent = label;
+                    btn.classList.remove('is-ok', 'is-fail');
+                  }, 2600);
+                  if (ok) window.lrjTrack('click_copy_xhs', { page_path: location.pathname });
+                };
+                var syncCopy = function () {
+                  try {
+                    var ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.setAttribute('readonly', '');
+                    ta.style.position = 'fixed';
+                    ta.style.left = '-9999px';
+                    ta.style.top = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    ta.setSelectionRange(0, text.length);
+                    var ok = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    return ok;
+                  } catch (err) {
+                    return false;
+                  }
+                };
+                if (syncCopy()) {
+                  settle(true);
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(text).then(function () { settle(true); }, function () { settle(false); });
+                } else {
+                  settle(false);
+                }
               });
             }
 

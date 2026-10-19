@@ -184,10 +184,20 @@
   </div>
 </div>
 
-**不方便扫码？** 在小红书 App 搜索：
+**不方便扫码？** 一键复制口令，或直接点开店铺。
 
-- 账号：**pipelurenjia**（昵称：一个路人甲（自学面试上岸））
-- 店铺链接：复制 `https://xhslink.com/m/AWr1kqYCuNM` 到小红书 App 打开
+<div class="lrj-copy">
+  <div class="lrj-copy-main">
+    <code class="lrj-copy-url">https://xhslink.com/m/AWr1kqYCuNM</code>
+    <p class="lrj-copy-hint">复制后打开小红书 App，会自动识别并跳转</p>
+  </div>
+  <div class="lrj-copy-actions">
+    <button type="button" class="lrj-copy-btn" data-lrj-copy="推荐小红书好店一个路人甲（自学面试上岸），4件商品热卖中 3MrwFsB4Pqt https://xhslink.com/m/AWr1kqYCuNM 点击链接或者复制本条信息打开【小红书app】查看 MU1352">复制口令</button>
+    <a class="lrj-open-btn" href="https://xhslink.com/m/AWr1kqYCuNM" target="_blank" rel="noopener">直接打开店铺</a>
+  </div>
+</div>
+
+<p class="lrj-copy-note">也可以在小红书 App 搜索：<b>pipelurenjia</b>（昵称：一个路人甲（自学面试上岸））</p>
 
 ---
 
