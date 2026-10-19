@@ -209,6 +209,7 @@
     }
     .lrj-hero-media img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
       display: block;
     }
@@ -261,6 +262,12 @@
       margin-top: 0.8em;
       transition: background 0.2s;
     }
+    .lrj-btn-sm {
+      padding: 7px 18px;
+      font-size: 13px;
+      border-radius: 20px;
+      margin-top: 0.9em;
+    }
     .lrj-btn:hover {
       background: #2d7a5c;
     }
@@ -286,6 +293,7 @@
     }
     .lrj-card-media img {
       width: auto;
+      height: auto;
       max-width: 100%;
       max-height: 100%;
       display: block;
@@ -397,6 +405,7 @@
     }
     .lrj-bundle-media img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
       display: block;
     }
@@ -468,6 +477,7 @@
     }
     .lrj-qr-card img {
       width: 200px;
+      height: auto;
       max-width: 100%;
       border-radius: 8px;
       display: block;
@@ -561,6 +571,96 @@
     .lrj-copy-note {
       font-size: 13px;
       color: #7a9187;
+    }
+
+    /* 好评：数据条 */
+    .lrj-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 1.2em 0 1.5em;
+    }
+    .lrj-stat {
+      text-align: center;
+      padding: 14px 6px;
+      background: #f4f9f6;
+      border-radius: 10px;
+    }
+    .lrj-stat b {
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1.2;
+      color: #2d7a5c;
+    }
+    .lrj-stat span {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: #8a9a92;
+    }
+
+    /* 好评：引言卡 */
+    .lrj-quote-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 1.2em 0 1.6em;
+    }
+    .lrj-quote-card {
+      border-left: 3px solid #348f6b;
+      background: #fbfdfc;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .lrj-quote-card p {
+      margin: 0 !important;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #3d4a44;
+    }
+    .lrj-quote-card .lrj-quote-meta {
+      margin-top: 8px !important;
+      font-size: 12px;
+      color: #99a8a1;
+    }
+
+    /* 好评：截图墙 */
+    .lrj-wall-title {
+      margin: 1.6em 0 0.8em !important;
+      padding: 0 !important;
+      font-size: 15px;
+      color: #3d4a44;
+    }
+    .lrj-wall {
+      column-count: 3;
+      column-gap: 12px;
+    }
+    .lrj-wall figure {
+      break-inside: avoid;
+      margin: 0 0 14px !important;
+    }
+    .lrj-wall img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #e6ece9;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .lrj-wall figcaption {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #99a8a1;
+      line-height: 1.5;
+    }
+    .lrj-wall-hint {
+      text-align: center;
+      font-size: 12px;
+      color: #b0bcb6;
+      margin-top: 0.4em !important;
     }
 
     /* 侧栏常驻卡片 */
@@ -740,6 +840,19 @@
       .lrj-copy-btn,
       .lrj-open-btn {
         text-align: center;
+      }
+      .lrj-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .lrj-wall {
+        column-count: 2;
+        column-gap: 10px;
+      }
+      .lrj-quote-cards {
+        grid-template-columns: 1fr;
+      }
+      .lrj-quote-card p {
+        font-size: 14px;
       }
     }
   </style>

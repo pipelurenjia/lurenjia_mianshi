@@ -10,7 +10,7 @@
 
 <div class="lrj-hero">
   <div class="lrj-hero-media">
-    <img src="/assets/img/course-main.jpg" alt="结构化面试视频课">
+    <img src="/assets/img/course-main.jpg" width="800" height="800" alt="结构化面试视频课">
   </div>
   <div class="lrj-hero-body">
     <span class="lrj-badge">主推</span>
@@ -32,15 +32,15 @@
 
 <div class="lrj-shot-row">
   <figure class="lrj-shot">
-    <div class="lrj-shot-box"><img src="/assets/img/course-notes.jpg" alt="课程讲义"></div>
+    <div class="lrj-shot-box"><img src="/assets/img/course-notes.jpg" width="800" height="733" alt="课程讲义"></div>
     <figcaption>课程讲义</figcaption>
   </figure>
   <figure class="lrj-shot">
-    <div class="lrj-shot-box"><img src="/assets/img/course-mindmap.jpg" alt="上课思维导图"></div>
+    <div class="lrj-shot-box"><img src="/assets/img/course-mindmap.jpg" width="800" height="551" alt="上课思维导图"></div>
     <figcaption>上课思维导图</figcaption>
   </figure>
   <figure class="lrj-shot">
-    <div class="lrj-shot-box"><img src="/assets/img/course-live.jpg" alt="课堂实录"></div>
+    <div class="lrj-shot-box"><img src="/assets/img/course-live.jpg" width="1000" height="460" alt="课堂实录"></div>
     <figcaption>课堂实录</figcaption>
   </figure>
 </div>
@@ -64,7 +64,7 @@
 
 <div class="lrj-bundle">
   <div class="lrj-bundle-media">
-    <img src="/assets/img/materials-cover.jpg" alt="结构化面试文字资料合集">
+    <img src="/assets/img/materials-cover.jpg" width="800" height="958" alt="结构化面试文字资料合集">
   </div>
   <div class="lrj-bundle-body">
     <h3>文字资料合集</h3>
@@ -79,25 +79,26 @@
       <li><b>《政策理论思维导图》</b>PNG 图片 + XMind 源文件</li>
     </ul>
     <p>材料原创率 100%，收到最多的评价是「醍醐灌顶」。</p>
+    <a class="lrj-btn lrj-btn-sm" href="/guide/resources?id=怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
   </div>
 </div>
 
 
 <div class="lrj-preview-row">
   <figure>
-    <img src="/assets/img/preview-summary-p1.jpg" alt="思维总结内页：综合分析框架">
+    <img src="/assets/img/preview-summary-p1.jpg" width="620" height="840" alt="思维总结内页：综合分析框架">
     <figcaption>思维总结 · 综合分析框架</figcaption>
   </figure>
   <figure>
-    <img src="/assets/img/preview-summary-toc.jpg" alt="思维总结目录">
+    <img src="/assets/img/preview-summary-toc.jpg" width="620" height="518" alt="思维总结目录">
     <figcaption>思维总结 · 目录</figcaption>
   </figure>
   <figure>
-    <img src="/assets/img/preview-dictation-toc.jpg" alt="32题逐字稿目录">
+    <img src="/assets/img/preview-dictation-toc.jpg" width="620" height="739" alt="32题逐字稿目录">
     <figcaption>逐字稿 · 32 题目录</figcaption>
   </figure>
   <figure>
-    <img src="/assets/img/preview-dictation.jpg" alt="逐字稿答题示例内页">
+    <img src="/assets/img/preview-dictation.jpg" width="620" height="871" alt="逐字稿答题示例内页">
     <figcaption>逐字稿 · 答题示例</figcaption>
   </figure>
 </div>
@@ -107,24 +108,26 @@
 <div class="lrj-grid">
   <div class="lrj-card">
     <div class="lrj-card-media">
-      <img src="/assets/img/materials-toc.jpg" alt="思维总结目录">
+      <img src="/assets/img/materials-toc.jpg" width="800" height="668" alt="思维总结目录">
     </div>
     <div class="lrj-card-body">
       <h3>思维总结（可单卖）</h3>
       <p class="lrj-price-note">店内也有单独出售的链接 · 价格见店铺</p>
       <p>约 3 万字，不算多，按综合分析、组织管理、人际关系、应急应变、认知观点五类题型整理答题思路，每页都是可以直接上手用的框架，干货。</p>
       <p><b>怎么用</b>：无需背诵。上手直接看，哪个题型答不好就重点翻哪一章；考前再看两遍，思路会清晰很多。</p>
+      <a class="lrj-btn lrj-btn-sm" href="/guide/resources?id=怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
     </div>
   </div>
   <div class="lrj-card">
     <div class="lrj-card-media">
-      <img src="/assets/img/materials-dictation.jpg" alt="32题逐字稿示例">
+      <img src="/assets/img/materials-dictation.jpg" width="700" height="980" alt="32题逐字稿示例">
     </div>
     <div class="lrj-card-body">
       <h3>32 题逐字稿（可单卖）</h3>
       <p class="lrj-price-note">店内也有单独出售的链接 · 价格见店铺</p>
       <p>32 道经典母题，态度观点 5 道、社会现象 6 道、漫画 3 道、组织管理 7 道、人际关系 6 道、应急应变 5 道，共 2.7 万字，都是一题一题写出来的。</p>
       <p><b>怎么用</b>：不建议背。先当思路参考——自己答一遍，再看我怎么搭结构；再当复述材料——记下主要观点，用自己的话讲一遍。你会发现我没有套同一个模板，每道题的思路都是活的。</p>
+      <a class="lrj-btn lrj-btn-sm" href="/guide/resources?id=怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
     </div>
   </div>
 </div>
@@ -137,31 +140,70 @@
 
 ## 他们怎么说
 
-<div class="lrj-quotes">
-  <blockquote class="lrj-quote">
-    <p>"面试思维总结建议搭配逐字稿使用。先多看两遍逐字稿，把每种题型要答的框架背下来，再配合逐字稿使用，效果非常好！本人这样操作两天（人才引进80，国企82）！"</p>
-    <footer>— 小红书买家评价</footer>
-  </blockquote>
-  <blockquote class="lrj-quote">
-    <p>"特别有用，我离面试前八天，临时换了个面试班，跟不上大家的进度，每次模拟都是胡说八道，但是自从看了路人甲的资料以后，突然就有思路了，茅塞顿开，最后也成功上岸！"</p>
-    <footer>— 小红书买家评价</footer>
-  </blockquote>
-  <blockquote class="lrj-quote">
-    <p>"一开始是被路局的答疑吸引，后面觉得自己答题体系不够健全，遂买了讲义学习，相对起线下培训班价格真的物美价廉。比起讲义，开口练习、复述更加重要。"</p>
-    <footer>— 小红书买家评价</footer>
-  </blockquote>
+<div class="lrj-stats">
+  <div class="lrj-stat"><b>1.1 万</b><span>店铺累计售出</span></div>
+  <div class="lrj-stat"><b>100%</b><span>好评率</span></div>
+  <div class="lrj-stat"><b>4.8 万</b><span>关注粉丝</span></div>
+  <div class="lrj-stat"><b>1 分钟</b><span>客服平均回复</span></div>
 </div>
 
-<div class="lrj-img-row">
+<div class="lrj-quote-cards">
+  <div class="lrj-quote-card">
+    <p>「意料之外，情理之中的高端思路」</p>
+    <p class="lrj-quote-meta">买家评价</p>
+  </div>
+  <div class="lrj-quote-card">
+    <p>「一针见血，学会了如何思考」</p>
+    <p class="lrj-quote-meta">买家评价</p>
+  </div>
+  <div class="lrj-quote-card">
+    <p>「看完有如梦初醒的感觉」</p>
+    <p class="lrj-quote-meta">买家评价</p>
+  </div>
+  <div class="lrj-quote-card">
+    <p>「醍醐灌顶！相见恨晚！」</p>
+    <p class="lrj-quote-meta">买家评价</p>
+  </div>
+</div>
+
+<p class="lrj-wall-title">想看详细评价，可以点开截图</p>
+
+<div class="lrj-wall">
   <figure>
-    <img src="/assets/img/reviews-1.jpg" alt="买家好评截图">
-    <figcaption>买家好评</figcaption>
+    <img src="/assets/img/review-01-chat.jpg" width="640" height="852" alt="文字资料合集买家评价：思路提纲挈领，老师及时答疑" loading="lazy">
+    <figcaption>文字合集 · 还附了答疑</figcaption>
   </figure>
   <figure>
-    <img src="/assets/img/reviews-2.jpg" alt="买家好评截图">
-    <figcaption>买家好评</figcaption>
+    <img src="/assets/img/review-02-repeat.jpg" width="640" height="398" alt="文字资料合集回头客评价" loading="lazy">
+    <figcaption>文字合集 · 回头客</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/review-03-pdd.jpg" width="640" height="800" alt="买家长评：材料像宝藏，简洁但有深度" loading="lazy">
+    <figcaption>文字合集 · 一条长私信</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/review-04-course.jpg" width="640" height="761" alt="视频课买家评价：讲得细致，物超所值" loading="lazy">
+    <figcaption>视频课 · 写了一整段</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/review-05-course-newbie.jpg" width="640" height="641" alt="视频课买家评价：帮小白快速入门" loading="lazy">
+    <figcaption>视频课 · 帮小白入门</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/review-06-summary.jpg" width="640" height="420" alt="思维总结买家评价：面试结果从未有过的好" loading="lazy">
+    <figcaption>思维总结 · 面试结果从没有过的好</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/review-07-dictation.jpg" width="640" height="214" alt="32题逐字稿买家评价：看了一周，面试考第一" loading="lazy">
+    <figcaption>逐字稿 · 一周考第一</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/review-08-summary-short.jpg" width="640" height="274" alt="思维总结买家评价：大道至简" loading="lazy">
+    <figcaption>思维总结 · 大道至简</figcaption>
   </figure>
 </div>
+
+<p class="lrj-wall-hint">截图来自小红书店铺真实评价，点击可放大</p>
 
 ---
 
@@ -173,12 +215,12 @@
 
 <div class="lrj-buy">
   <div class="lrj-qr-card" data-lrj-event="click_buy_xhs">
-    <img src="/assets/img/xhs-qr.png" alt="小红书二维码">
+    <img src="/assets/img/xhs-qr.png" width="340" height="340" alt="小红书二维码">
     <h3>扫码进店</h3>
     <p>打开小红书 App「扫一扫」，扫码进入店铺，全部 4 件商品都在这里。</p>
   </div>
   <div class="lrj-qr-card" data-lrj-event="click_wechat">
-    <img src="/assets/img/wechat-qr.png" alt="微信二维码">
+    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="微信二维码">
     <h3>加我微信</h3>
     <p>关于资料和课程的疑问、备考问题想找人聊聊，都可以加我。看到会回。</p>
   </div>
