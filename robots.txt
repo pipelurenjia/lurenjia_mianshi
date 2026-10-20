@@ -105,5 +105,10 @@ Allow: /
 User-agent: DeepSeekBot
 Allow: /
 
+# ========== AI 抓取入口（llms.txt 规范 https://llmstxt.org）==========
+# 摘要索引：/llms.txt
+# 全站正文合集（Markdown 原文，一次抓取拿全站）：/llms-full.txt
+# 注意：正文由 JavaScript 渲染，不执行 JS 的抓取器请直接读取上述两个文件
+
 # ========== 站点地图 ==========
 Sitemap: https://yigelurenjia.com/sitemap.xml
