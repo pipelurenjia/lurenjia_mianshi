@@ -213,6 +213,14 @@
 
 页面标价为原价。小红书店铺会不定期发放平台券、参与平台活动，进店后的实际到手价通常低于标价，具体以店铺实时活动为准。
 
+<figure class="lrj-shop-shot">
+  <div class="lrj-shot-frame">
+    <img src="/assets/img/xhs-shop.jpg" width="1080" height="648" alt="小红书店铺「一个路人甲（自学面试上岸）」主页：4.6 分、已售 1.1 万、粉丝 4.8 万、好评率 100%" loading="lazy">
+  </div>
+  <figcaption>小红书店铺主页</figcaption>
+</figure>
+
+
 <div class="lrj-copy">
   <div class="lrj-copy-main">
     <code class="lrj-copy-url">https://xhslink.com/m/AWr1kqYCuNM</code>
@@ -220,7 +228,7 @@
   </div>
   <div class="lrj-copy-actions">
     <button type="button" class="lrj-copy-btn" data-lrj-copy="推荐小红书好店一个路人甲（自学面试上岸），4件商品热卖中 3MrwFsB4Pqt https://xhslink.com/m/AWr1kqYCuNM 点击链接或者复制本条信息打开【小红书app】查看 MU1352">复制口令</button>
-    <a class="lrj-open-btn" href="https://xhslink.com/m/AWr1kqYCuNM" target="_blank" rel="noopener">直接打开店铺</a>
+    <a class="lrj-open-btn" data-lrj-shop data-lrj-event="click_buy_xhs" href="https://www.xiaohongshu.com/shop/65994c2c096eae0001305ee2" target="_blank" rel="noopener">直接打开店铺</a>
   </div>
 </div>
 

@@ -408,6 +408,31 @@
   color: #7a9187;
 }
 
+/* 店铺主页截图：进店前的凭证，克制处理，不抢按钮注意力 */
+.vp-doc .lrj-shop-shot {
+  max-width: 440px;
+  margin: 26px auto 8px;
+}
+.lrj-shot-frame {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(45, 90, 71, 0.14);
+  box-shadow: 0 8px 24px rgba(45, 90, 71, 0.1);
+  background: #1b1f1c;
+}
+.lrj-shot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: -19%; /* 裁掉顶部返回/搜索/消息/分享一行与封面残影，去掉"手机截图"感 */
+}
+.vp-doc .lrj-shop-shot figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: #7a9187;
+}
+
 /* 好评：数据条 */
 .lrj-stats {
   display: grid;

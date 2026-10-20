@@ -151,6 +151,34 @@ function bindCopy() {
   })
 }
 
+/** 移动端「直接打开店铺」：直挂 xhsdiscover 协议，绕开短链落地页的唤起竞态 */
+const SHOP_WEB = 'https://www.xiaohongshu.com/shop/65994c2c096eae0001305ee2'
+const SHOP_SCHEME = 'xhsdiscover://shop_detail?seller_id=65994c2c096eae0001305ee2&source=share'
+
+function bindOpenShop() {
+  document.addEventListener('click', (e) => {
+    const btn = e.target && e.target.closest ? e.target.closest('[data-lrj-shop]') : null
+    if (!btn) return
+
+    // 桌面端不拦截：默认 href 就是 Web 店铺页，直达不靠唤起
+    const ua = navigator.userAgent
+    if (!/Android|iPhone|iPad|iPod|HarmonyOS|Mobile/i.test(ua)) return
+
+    e.preventDefault()
+
+    // 用户手势直接跳自定义协议，这是移动端唯一稳定能唤起 App 的方式
+    location.href = SHOP_SCHEME
+
+    // 兜底：1.6s 后页面还在前台，说明没唤起来，退到 Web 店铺页
+    const t0 = Date.now()
+    setTimeout(() => {
+      if (document.hidden) return
+      if (Date.now() - t0 > 4000) return
+      location.href = SHOP_WEB
+    }, 1600)
+  })
+}
+
 export default {
   extends: DefaultTheme,
   Layout() {
@@ -165,6 +193,7 @@ export default {
     bindLightbox()
     bindTracking()
     bindCopy()
+    bindOpenShop()
     router.onAfterPageLoad = () => {
       syncCanonical()
     }
