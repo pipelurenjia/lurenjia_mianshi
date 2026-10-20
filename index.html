@@ -18,17 +18,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#348f6b">
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM96WNVJZ2"></script>
+  <!-- 记录当前路径，供 SPA 路由切换时判断是否需要补发 page_view -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-HM96WNVJZ2', { send_page_view: true });
-    // 记录当前路径，供 SPA 路由切换时判断是否需要补发 page_view
-    window.__lrjLastGaPath = (location.pathname.replace(/\/$/, '') || '/').replace(/^\/README$/, '/');
+    window.__lrjLastPath = (location.pathname.replace(/\/$/, '') || '/').replace(/^\/README$/, '/');
   </script>
-  
+
   <!-- GEO优化: 结构化数据 -->
   <script type="application/ld+json">
   {
@@ -874,6 +868,12 @@
       .lrj-copy-actions {
         flex-direction: column;
       }
+      /* 手机端：一键打开店铺为主操作，复制口令退为备用 */
+      .lrj-copy-actions .lrj-open-btn {
+        order: -1;
+        padding: 12px 20px;
+        font-size: 15px;
+      }
       .lrj-copy-btn,
       .lrj-open-btn {
         text-align: center;
@@ -968,12 +968,11 @@
               });
             }
 
-            // 转化事件埋点：GA4 + 百度统计双发（只绑定一次）
+            // 转化事件埋点：百度统计（只绑定一次）
             if (!window.__lrjTrackBound) {
               window.__lrjTrackBound = true;
-              window.lrjTrack = function (name, params) {
+              window.lrjTrack = function (name) {
                 try {
-                  if (typeof gtag === 'function') gtag('event', name, params || {});
                   if (window._hmt) window._hmt.push(['_trackEvent', 'convert', name, location.pathname]);
                 } catch (err) { /* 统计失败不影响页面 */ }
               };
@@ -1054,20 +1053,13 @@
               ? h1.textContent.trim() + ' | 一个路人甲 · 结构化面试'
               : '一个路人甲 · 结构化面试原创学习体系 | 免费自学资料';
 
-            // SPA 路由切换时补发 page_view（GA4 + 百度统计；首次加载已由各自脚本自动上报）
-            var gaPath = isHome ? '/' : path.replace(/\.md$/, '');
-            if (window.__lrjLastGaPath !== gaPath) {
-              window.__lrjLastGaPath = gaPath;
-              if (typeof gtag === 'function') {
-                gtag('event', 'page_view', {
-                  page_title: document.title,
-                  page_path: gaPath,
-                  page_location: location.origin + gaPath
-                });
-              }
+            // SPA 路由切换时补发 page_view（百度统计；首次加载已由脚本自动上报）
+            var curPath = isHome ? '/' : path.replace(/\.md$/, '');
+            if (window.__lrjLastPath !== curPath) {
+              window.__lrjLastPath = curPath;
               if (window._hmt) {
                 window._hmt.push(['_setAutoPageview', false]);
-                window._hmt.push(['_trackPageview', gaPath]);
+                window._hmt.push(['_trackPageview', curPath]);
               }
             }
 
