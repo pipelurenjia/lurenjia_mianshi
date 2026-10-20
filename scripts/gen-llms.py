@@ -17,6 +17,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DOCS = os.path.join(ROOT, "docs")   # VitePress srcDir，正文都在这里
 SITE = "https://yigelurenjia.com"
 
 SUMMARY = (
@@ -105,11 +106,11 @@ PAGES = [
      "作者整理的系统化补充内容：视频课与文字资料合集（网站本体全部免费）"),
 ]
 
-HOMEPAGE = ("README", "站点总览：核心价值、学习路径与完整目录")
+HOMEPAGE = ("index", "站点总览：核心价值、学习路径与完整目录")
 
 
 def read_md(route):
-    path = os.path.join(ROOT, route + ".md")
+    path = os.path.join(DOCS, route + ".md")
     if not os.path.exists(path):
         return None
     with open(path, "r", encoding="utf-8") as f:
@@ -249,9 +250,11 @@ def main():
 
     full_text = "\n".join(full).rstrip() + "\n"
 
-    with open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8") as f:
+    public = os.path.join(DOCS, "public")
+    os.makedirs(public, exist_ok=True)
+    with open(os.path.join(public, "llms.txt"), "w", encoding="utf-8", newline="") as f:
         f.write(index_text)
-    with open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(public, "llms-full.txt"), "w", encoding="utf-8", newline="") as f:
         f.write(full_text)
 
     print(f"llms.txt      : {len(index_text):>7} 字符")

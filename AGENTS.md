@@ -1,33 +1,35 @@
 # AGENTS.md - Agentic Coding Guidelines
 
-This repository contains a Docsify-powered documentation site for structured interview preparation materials.
+This repository contains a **VitePress**-powered documentation site for structured interview preparation materials.
+
+> 2026-10 已从 Docsify 迁移到 VitePress。原因：Docsify 是纯客户端渲染，正文要等 JS 运行时才拉取，百度、GPTBot、ClaudeBot 等不执行 JS 的爬虫读到的是只有 41 个字的空壳。VitePress 是静态站点生成（SSG），每页输出完整静态 HTML。
 
 ## Project Overview
 
-- **Type**: Static documentation site (Docsify)
+- **Type**: Static documentation site (VitePress · SSG)
 - **Language**: Chinese (Simplified)
 - **Content**: Markdown files for interview frameworks and skills
-- **No build step required**: Changes to `.md` files are auto-refreshed in preview
+- **Build required**: `npm run build` → 产物输出到 `dist/`
 
 ---
 
 ## Commands
 
-### Preview Documentation Locally
-
 ```bash
-# Serve docsify locally (requires docsify-cli)
-docsify serve .
-
-# Or use Python simple server
-python -m http.server 3000
+npm install      # 安装依赖
+npm run dev      # 本地预览（http://localhost:5173）
+npm run build    # 构建到 dist/
+npm run preview  # 预览构建产物
+npm run llms     # 重新生成 llms.txt / llms-full.txt
 ```
 
-Then open http://localhost:3000 in browser.
+### 构建后验证（含 P0-1 回归测试）
 
-### No Linting/Testing
+```bash
+npm run build && python scripts/verify-build.py
+```
 
-This is a pure content repository - no JavaScript/TypeScript code, no tests, no linting.
+该脚本会逐个请求全部 36 个页面，确认正文真实存在于静态 HTML 源码中、canonical/og:url 逐页正确、内链与图片无缺失。
 
 ---
 
@@ -35,24 +37,32 @@ This is a pure content repository - no JavaScript/TypeScript code, no tests, no 
 
 ```
 /
-├── index.html          # Docsify 入口（SEO/GEO 结构化数据 + 主题样式 + 引流插件）
-├── _sidebar.md         # 侧栏导航（6 大分类 + 资料与课程 + 关于我卡片）
-├── _coverpage.md       # 封面页
-├── assets/
-│   ├── docsify.js      # Docsify 4.13.1（本地）
-│   ├── search.min.js   # 搜索插件
-│   ├── vue.css         # 主题
-│   └── img/            # 引流组件用图（二维码、商品图、好评，均已压缩）
-├── guide/              # 入门指南 + 资料与课程承接页（resources.md）
-├── method/             # 答题方法论
-├── question-types/     # 题型专训
-├── practice/           # 练习方法
-├── expression/         # 表达能力
-├── mindset/            # 心态调整
-├── framework/          # 旧结构遗留（未挂导航）
-├── notes/              # 原始笔记素材
-├── 内容素材/            # 小红书素材
-└── AGENTS.md           # 本文件
+├── docs/                    # VitePress 源目录（srcDir）
+│   ├── .vitepress/
+│   │   ├── config.mjs         # 标题、导航、侧栏、head、sitemap
+│   │   └── theme/
+│   │       ├── index.mjs       # 自定义插件（放大 / 埋点 / 换页上报）
+│   │       ├── FooterCta.vue  # 全站文末引流块
+│   │       └── custom.css      # lrj- 引流组件样式
+│   ├── index.md              # 首页（hero + 内容索引）
+│   ├── guide/                 # 入门指南 + 资料与课程承接页
+│   ├── method/                # 答题方法论
+│   ├── question-types/        # 题型专训
+│   ├── practice/              # 练习方法
+│   ├── expression/            # 表达能力
+│   ├── mindset/               # 心态调整
+│   └── public/                # 静态资源（原样拷到站点根）
+│       ├── assets/img/        # 引流组件用图
+│       ├── favicon.ico
+│       ├── robots.txt
+│       ├── llms.txt
+│       └── llms-full.txt
+├── scripts/
+│   ├── gen-llms.py           # 生成 llms.txt / llms-full.txt
+│   └── verify-build.py       # 构建产物验证（36 页回归）
+├── notes/                     # 原始笔记素材
+├── 内容素材/                   # 501 篇小红书素材（未挂导航）
+└── AGENTS.md                  # 本文件
 ```
 
 ---
@@ -102,19 +112,20 @@ This is a pure content repository - no JavaScript/TypeScript code, no tests, no 
 
 ## Navigation Configuration
 
-Sidebar is configured in `_sidebar.md`:
-```markdown
-- 面试框架
-  - [观点展开法](/framework/viewpoint.md)
-  - [答题结构](/framework/structure.md)
-- 面试技巧
-  - [话术技巧](/skills/talk.md)
-  - [复盘方法](/skills/review.md)
+Sidebar is configured in `docs/.vitepress/config.mjs` under `themeConfig.sidebar`:
+```js
+{
+  text: '我是小白',
+  items: [
+    { text: '从零开始怎么学', link: '/guide/start-here' }
+  ]
+}
 ```
 
 To add new pages:
-1. Create `.md` file in appropriate folder
-2. Add entry to `_sidebar.md`
+1. Create `.md` file in the appropriate folder under `docs/`
+2. Add an entry to `themeConfig.sidebar` in `config.mjs`
+3. Re-run `npm run llms` to refresh the AI entry files
 
 ---
 
@@ -134,25 +145,27 @@ To add new pages:
 
 ## Theme Customization
 
-Custom styles in `index.html`:
-- Cover gradient: `linear-gradient(315deg, #B3B8FE 0%, #D4DCD7 50%, #F2FCB4 100%)`
-- Brand green: `#348f6b`（按钮、价格、强调色统一用这个）
-- Theme: Vue.css（本地 `assets/vue.css`，非 unpkg）
+**站点框架**：VitePress（2026-10 从 Docsify 迁移）。配置文件 `docs/.vitepress/config.mjs`。
+
+**品牌色规范**：
+- 品牌绿：`#348f6b`（按钮、价格、强调色统一用这个）
+- Hero 文字：`#2d5a47`，副文字 `#4a6b5c`
+- 原封面渐变：`linear-gradient(315deg, #B3B8FE 0%, #D4DCD7 50%, #F2FCB4 100%)`（迁移后作为首页 hero 视觉参考）
 
 ### 引流组件（勿随性改动）
 
-转化相关组件统一使用 `lrj-` 前缀，样式集中在 `index.html` 的 `<style>` 末尾：
+转化相关组件统一使用 `lrj-` 前缀，样式集中在 `docs/.vitepress/theme/custom.css`：
 
 | 类名 | 用途 | 位置 |
 |------|------|------|
-| `.lrj-cover-cta` | 封面底部资料入口 | `_coverpage.md` |
-| `.lrj-side-card` | 侧栏底部常驻「关于我」卡片 | `_sidebar.md` |
-| `.lrj-hero` / `.lrj-grid` / `.lrj-card` | 承接页主推卡与商品卡 | `guide/resources.md` |
-| `.lrj-quote` | 买家评价引用 | `guide/resources.md` |
-| `.lrj-buy` / `.lrj-qr-card` | 二维码转化区 | `guide/resources.md` |
-| `.lrj-footer-cta` | 全站文末注入块 | `index.html` 的 docsify 插件自动注入 |
+| `.lrj-cover-cta` | 首页底部资料入口 | `docs/index.md` |
+| `.lrj-side-card` | 侧栏底部常驻「关于我」卡片 | `docs/.vitepress/config.mjs`（侧栏尾部 HTML） |
+| `.lrj-hero` / `.lrj-grid` / `.lrj-card` | 承接页主推卡与商品卡 | `docs/guide/resources.md` |
+| `.lrj-quote` | 买家评价引用 | `docs/guide/resources.md` |
+| `.lrj-buy` / `.lrj-qr-card` | 二维码转化区 | `docs/guide/resources.md` |
+| `.lrj-footer-cta` | 全站文末引流块 | `docs/.vitepress/theme/FooterCta.vue`，经 `doc-after` 插槽注入 |
 
-`index.html` 中 `$docsify.plugins` 会在每个内容页末尾自动注入 `.lrj-footer-cta`；封面与 `guide/resources.md` 本身自动跳过。图片资源在 `assets/img/`，全部经过压缩（单张 < 120KB）。
+文末引流块由 `FooterCta.vue` 注入到每个文档页；首页与 `guide/resources` 自动跳过（与 Docsify 时代行为一致）。图片资源在 `docs/public/assets/img/`，原图在仓库根 `assets/img/`（迁移遗留，待清理）。
 
 ---
 
@@ -176,11 +189,12 @@ git push -u origin add-new-article
 
 | Task | Action |
 |------|--------|
-| Add new article | Create `.md` file, update `_sidebar.md` |
-| Fix typo | Edit `.md` file directly |
-| Add navigation | Edit `_sidebar.md` |
-| Customize theme | Edit `index.html` styles |
-| Add search | Docsify search is already enabled |
+| Add new article | Create `.md` under `docs/`, update `config.mjs` sidebar |
+| Fix typo | Edit the `.md` file directly |
+| Add navigation | Edit `themeConfig.sidebar` in `config.mjs` |
+| Customize theme | Edit `docs/.vitepress/theme/custom.css` |
+| Update AI entry files | Run `npm run llms` |
+| Verify build | Run `npm run build && python scripts/verify-build.py` |
 
 ---
 

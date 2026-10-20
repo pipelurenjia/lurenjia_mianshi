@@ -25,7 +25,7 @@
       <li><b>篇幅精简</b>：理论课只有不到4小时，省下的时间留给开口练习</li>
       <li><b>看完不满意可退</b>：老规矩，觉得不值直接找我</li>
     </ul>
-    <a class="lrj-btn" href="/guide/resources?id=怎么买">怎么买 ↓</a>
+    <a class="lrj-btn" href="#怎么买">怎么买 ↓</a>
   </div>
 </div>
 
@@ -79,7 +79,7 @@
       <li><b>《政策理论思维导图》</b>PNG 图片 + XMind 源文件</li>
     </ul>
     <p>材料原创率 100%，收到最多的评价是「醍醐灌顶」。</p>
-    <a class="lrj-btn lrj-btn-sm" href="/guide/resources?id=怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
+    <a class="lrj-btn lrj-btn-sm" href="#怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
   </div>
 </div>
 
@@ -115,7 +115,7 @@
       <p class="lrj-price-note">店内也有单独出售的链接 · 价格见店铺</p>
       <p>约 3 万字，不算多，按综合分析、组织管理、人际关系、应急应变、认知观点五类题型整理答题思路，每页都是可以直接上手用的框架，干货。</p>
       <p><b>怎么用</b>：无需背诵。上手直接看，哪个题型答不好就重点翻哪一章；考前再看两遍，思路会清晰很多。</p>
-      <a class="lrj-btn lrj-btn-sm" href="/guide/resources?id=怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
+      <a class="lrj-btn lrj-btn-sm" href="#怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
     </div>
   </div>
   <div class="lrj-card">
@@ -127,7 +127,7 @@
       <p class="lrj-price-note">店内也有单独出售的链接 · 价格见店铺</p>
       <p>32 道经典母题，态度观点 5 道、社会现象 6 道、漫画 3 道、组织管理 7 道、人际关系 6 道、应急应变 5 道，共 2.7 万字，都是一题一题写出来的。</p>
       <p><b>怎么用</b>：不建议背。先当思路参考——自己答一遍，再看我怎么搭结构；再当复述材料——记下主要观点，用自己的话讲一遍。你会发现我没有套同一个模板，每道题的思路都是活的。</p>
-      <a class="lrj-btn lrj-btn-sm" href="/guide/resources?id=怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
+      <a class="lrj-btn lrj-btn-sm" href="#怎么买" data-lrj-event="click_how_to_buy">怎么买 ↓</a>
     </div>
   </div>
 </div>

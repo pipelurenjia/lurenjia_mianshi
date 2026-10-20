@@ -1,0 +1,100 @@
+# 一个路人甲 · 结构化面试原创学习体系
+
+> 一个免费、系统、实战的结构化面试自学知识体系。教的是底层思维方法而不是固定套路，覆盖布点法、观点展开法、问答笔记法、复述法、游击战法等原创方法论，以及综合分析、组织管理、应急应变、人际关系等各类题型。
+
+- 作者：路人甲（自学面试 93 分上岸）
+- 站点：https://yigelurenjia.com
+- 许可：CC BY-NC-SA 4.0
+- 内容全部免费开放，无付费墙
+- 完整正文合集：https://yigelurenjia.com/llms-full.txt
+
+## 适合谁
+
+- 零基础小白：不知道从哪里开始
+- 进阶提升者：能答题但质量不高
+- 自学党：不想报班或报班没效果
+- 时间紧迫者：几天就要面试
+
+## 核心方法论
+
+- **布点法**：一道题先找逻辑主线，布 2-3 个要点，每个要点再展开 2-3 个小点
+- **观点展开法**：广度拓展（拆成组成部分）+ 深度挖掘（追问为什么、怎么办）
+- **问答笔记法**：阅读时提炼问题与要点，复习时遮住答案复述，形成输入-输出闭环
+- **复述法**：合上材料用自己的话讲出来，能讲出来才是真掌握
+- **游击战法**：边打边学、大量练习，不纠结一城一地得失
+
+## 推荐起始页面
+
+- 新手入门 → /guide/start-here
+- 快速了解方法论 → /method/point-method
+- 时间紧迫 → /guide/emergency
+
+## 全部内容
+
+### 入门指南
+
+- [从零开始怎么学](https://yigelurenjia.com/guide/start-here)：按「完全小白 / 学了但混乱 / 能答但质量不高」三种状态分流，给出各自的学习路径与周期
+- [游击战法：快速入门](https://yigelurenjia.com/guide/guerrilla)：不纠结一城一地得失，先用 2-3 小时了解题型就大量开练，边打边学
+- [上考场急救包](https://yigelurenjia.com/guide/emergency)：只剩几天就要面试时的应急策略，帮你撑住场面
+- [面试班选择指南](https://yigelurenjia.com/guide/choose-class)：报班还是自学、怎么挑面试班的决策参考
+### 答题方法论
+
+- [布点法：如何快速破题](https://yigelurenjia.com/method/point-method)：拿到题先找一条逻辑主线，在主线上布 2-3 个要点，每个再展开 2-3 个小点
+- [观点展开：怎么说清楚](https://yigelurenjia.com/method/expand)：框架有了但展不开时，用广度法与深度法把一个观点说清楚
+- [观点展开法：完整版](https://yigelurenjia.com/method/point-expand)：观点展开法的完整汇编，核心讲观点要明确犀利、答完再找补体现周全
+- [广度深度：展不开怎么办](https://yigelurenjia.com/method/breadth-depth)：广度拓展拆成组成部分，深度挖掘追问为什么与怎么办
+- [化虚为实：避免车轱辘话](https://yigelurenjia.com/method/concrete)：把抽象、空泛的表述落到具体事例与动作上，不再翻来覆去
+- [答题同质化怎么破](https://yigelurenjia.com/method/break-homogenization)：大家答得都差不多时怎么出彩：加宏观视角、用生活例子、形成自己的角度
+- [提高深度：洞察事物内在联系](https://yigelurenjia.com/method/improve-depth)：深度不是堆术语套官话，而是看到别人看不到的联系，附刻意练习路径
+- [宏观练习：大量答题把握规律](https://yigelurenjia.com/method/practice-macro)：见题少就会觉得每题都是新题，答得多了才能建立题型框架，附答疑
+### 题型专训
+
+- [综合分析题](https://yigelurenjia.com/question-types/comprehensive)：最常见也最能体现思维深度的题型，是什么→为什么→怎么办
+- [组织管理题](https://yigelurenjia.com/question-types/organization)：考察计划组织协调能力，关键是流程清晰、重点突出
+- [应急应变题](https://yigelurenjia.com/question-types/emergency)：考察突发情况处理能力，关键是快、准、稳
+- [人际关系题](https://yigelurenjia.com/question-types/relationship)：考察处理人际关系的能力，关键是理解、沟通、改进
+- [情景模拟题](https://yigelurenjia.com/question-types/simulation)：代入角色现场模拟说话，关键是真实自然
+- [态度观点题怎么答](https://yigelurenjia.com/question-types/attitude-viewpoint)：用「来龙去脉」法破题，不再没思路
+- [即兴演讲题怎么答](https://yigelurenjia.com/question-types/impromptu-speech)：即兴演讲不是考表演是考思路，忘记演讲正常答题
+- [漫画名言哲理题](https://yigelurenjia.com/question-types/allegory)：先讲清漫画/名言的道理，再结合社会现象或态度观点，转化为综合分析题作答
+- [调研类题目](https://yigelurenjia.com/question-types/research)：调研类题目的解题方法，先理解调研目的再设计内容
+### 练习方法
+
+- [复盘方法论](https://yigelurenjia.com/practice/review)：复盘不是重做：复盘思路对不对、亮点在哪、问题在哪，分浅复盘与深复盘
+- [高效练习方法](https://yigelurenjia.com/practice/practice-methods)：关键词输出法、限时思考法与练习量建议
+- [问答笔记法详解](https://yigelurenjia.com/practice/note-taking-deep)：积累思路最有效的方法：提炼问题与要点，遮住答案复述
+- [复述法详解](https://yigelurenjia.com/practice/repeat-deep)：背诵是低效的，合上材料用自己的话讲出来才是真掌握
+- [对练方法](https://yigelurenjia.com/practice/practice-with-others)：一个人练和对练效果完全不同，讲怎么组织高效对练
+### 表达能力
+
+- [口头语消除训练](https://yigelurenjia.com/expression/stop-words)：接受停顿、放慢语速、录音复盘，系统消除「嗯、那个、就是」
+- [口语化表达](https://yigelurenjia.com/expression/spoken-style)：答题不是念稿子，是说人话
+- [流畅性训练](https://yigelurenjia.com/expression/fluency)：先想后说、一次只说一件事，解决卡顿
+### 心态调整
+
+- [考场紧张怎么办](https://yigelurenjia.com/mindset/nervous)：紧张是正常的，重要的是学会与紧张共处，附压力脱敏训练
+- [焦虑缓解方法](https://yigelurenjia.com/mindset/anxiety)：备考焦虑是正常的，关键是学会与焦虑共处
+- [备考节奏把控](https://yigelurenjia.com/mindset/pace)：备考是马拉松不是短跑，讲不同阶段的节奏安排
+- [备考厌学怎么办](https://yigelurenjia.com/mindset/study-fatigue)：学着学着不想学了怎么办，帮你调整状态继续前进
+- [心态答疑：坚持还是放弃](https://yigelurenjia.com/mindset/mindset)：关于坚持还是放弃、要不要休息、什么时候该精雕细琢的答疑
+### 资料与课程
+
+- [配套资料与视频课](https://yigelurenjia.com/guide/resources)：作者整理的系统化补充内容：视频课与文字资料合集（网站本体全部免费）
+
+## 配套资料与课程
+
+网站内容全部免费。如需更系统的整理，作者在小红书店铺提供付费资料与视频课：
+
+- 资料与视频课介绍：https://yigelurenjia.com/guide/resources
+- 结构化面试视频课（主推）：方法论 + 四大题型 + 讲义与思维导图，共 237 分钟
+- 文字资料合集：《答题思维总结》约 3 万字 +《答题示例（逐字稿）》32 题 2.7 万字
+- 获取方式：小红书搜索 `pipelurenjia`（昵称：一个路人甲（自学面试上岸）），或扫码进店
+
+---
+
+✅
+我是路人甲
+原创结构化面试自学资料体系
+重剑无锋 大道至简
+希望每个人都可以通过自学上岸
+✅

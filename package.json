@@ -1,0 +1,16 @@
+{
+  "name": "lurenjia-mianshi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "一个路人甲 · 结构化面试原创学习体系",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "llms": "python scripts/gen-llms.py"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
