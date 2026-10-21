@@ -31,7 +31,9 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#348f6b' }],
 
     // 百度搜索资源平台站点归属验证（勿删除，删除后验证状态会失效）
+    // 两条分别对应 www.yigelurenjia.com 与 yigelurenjia.com 两个站点属性
     ['meta', { name: 'baidu-site-verification', content: 'codeva-EGa8Qc301v' }],
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-6fqFbn1tZk' }],
 
     // 分享卡片（微信 / 小红书 / 群聊转发时的标题与缩略图）
     ['meta', { property: 'og:type', content: 'website' }],
