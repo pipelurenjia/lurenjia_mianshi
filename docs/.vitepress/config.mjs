@@ -30,6 +30,9 @@ export default defineConfig({
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['meta', { name: 'theme-color', content: '#348f6b' }],
 
+    // 百度搜索资源平台站点归属验证（勿删除，删除后验证状态会失效）
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-EGa8Qc301v' }],
+
     // 分享卡片（微信 / 小红书 / 群聊转发时的标题与缩略图）
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: TITLE }],
