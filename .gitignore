@@ -9,3 +9,7 @@ node_modules/
 dist/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+
+# 百度推送的本地运行状态与日志（每台机器独立，不入库）
+project-progress/baidu-pushed.txt
+project-progress/baidu-push.log
