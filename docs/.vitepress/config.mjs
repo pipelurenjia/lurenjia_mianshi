@@ -67,7 +67,7 @@ export default defineConfig({
       { text: '资料与课程', link: '/guide/resources' }
     ],
 
-    // 与 _sidebar.md 完全一致的 7 个分类、35 个条目
+    // 与 _sidebar.md 完全一致的 7 个分类、36 个条目
     sidebar: [
       {
         text: '我是小白',
@@ -112,7 +112,8 @@ export default defineConfig({
           { text: '高效练习方法', link: '/practice/practice-methods' },
           { text: '问答笔记法详解', link: '/practice/note-taking-deep' },
           { text: '复述法详解', link: '/practice/repeat-deep' },
-          { text: '对练方法', link: '/practice/practice-with-others' }
+          { text: '对练方法', link: '/practice/practice-with-others' },
+          { text: '原创问答精选（一）', link: '/practice/original-qa-01' }
         ]
       },
       {
