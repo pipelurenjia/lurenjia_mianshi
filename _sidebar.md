@@ -46,6 +46,9 @@
   - [备考厌学怎么办](/mindset/study-fatigue)
   - [心态答疑：坚持还是放弃](/mindset/mindset)
 
+- 真人经验
+  - [经验贴合集](/experience/picks)
+
 - 资料与课程
   - [配套资料与视频课](/guide/resources)
 

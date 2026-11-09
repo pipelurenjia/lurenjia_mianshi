@@ -6,7 +6,7 @@
     npm run build && python scripts/verify-build.py
 
 检查项：
-1. 全部 38 个页面返回 200，且正文真实存在于静态 HTML 源码中（P0-1 回归测试）
+1. 全部 39 个页面返回 200，且正文真实存在于静态 HTML 源码中（P0-1 回归测试）
 2. 每页 canonical / og:url 逐页正确（不是共用首页的）
 3. 页面标题格式为「文章标题 | 一个路人甲 · 结构化面试」
 4. 所有正文内链无死链
@@ -43,6 +43,7 @@ EXPECTED = [
     "/mindset/nervous", "/mindset/anxiety", "/mindset/pace",
     "/mindset/study-fatigue", "/mindset/mindset",
     "/guide/resources",
+    "/experience/picks",
 ]
 
 

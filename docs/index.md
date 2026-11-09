@@ -167,6 +167,9 @@ features:
 - [备考节奏把控](/mindset/pace) — 不同阶段的节奏安排
 - [备考厌学怎么办](/mindset/study-fatigue) — 找回学习动力
 
+### 真人经验
+- [经验贴合集](/experience/picks) — 公开经验贴的摘要与原文链接
+
 ---
 
 ## 核心理念

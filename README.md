@@ -44,6 +44,7 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 │   ├── practice/             练习方法
 │   ├── expression/           表达能力
 │   ├── mindset/              心态调整
+│   ├── experience/           真人经验（公开经验贴摘要与原文链接）
 │   └── public/               静态资源（原样拷贝到站点根目录）
 │       ├── assets/img/       图片
 │       ├── favicon.ico
@@ -52,7 +53,7 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 │       └── llms-full.txt      AI 抓取入口（全站正文合集）
 ├── scripts/
 │   ├── gen-llms.py           生成 llms.txt / llms-full.txt
-│   └── verify-build.py       构建产物验证（38 页全量回归）
+│   └── verify-build.py       构建产物验证（39 页全量回归）
 ├── notes/                    未发布的原始笔记素材
 ├── 内容素材/                  501 篇小红书原始素材（未挂导航，版权待确认）
 └── skills/                   Agent 技能包（与站点无关）
@@ -80,6 +81,7 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
    - `docs/.vitepress/config.mjs` 的 `sidebar`（否则导航里找不到）
    - 跑一次 `npm run llms` 更新 AI 入口文件
 3. `npm run build && python scripts/verify-build.py` 验证无死链
+4. `docs/experience/` 只放公开经验贴的标题、原作者、平台、发布时间、自写概括和原文外链，不转载全文，不写联系方式
 
 ---
 

@@ -67,7 +67,7 @@ export default defineConfig({
       { text: '资料与课程', link: '/guide/resources' }
     ],
 
-    // 与 _sidebar.md 完全一致的 7 个分类、37 个条目
+    // 与 _sidebar.md 完全一致的 8 个分类、38 个条目
     sidebar: [
       {
         text: '我是小白',
@@ -133,6 +133,12 @@ export default defineConfig({
           { text: '备考节奏把控', link: '/mindset/pace' },
           { text: '备考厌学怎么办', link: '/mindset/study-fatigue' },
           { text: '心态答疑：坚持还是放弃', link: '/mindset/mindset' }
+        ]
+      },
+      {
+        text: '真人经验',
+        items: [
+          { text: '经验贴合集', link: '/experience/picks' }
         ]
       },
       {
