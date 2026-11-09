@@ -12,6 +12,8 @@
 4. 所有正文内链无死链
 5. 所有引用的图片资源存在
 6. llms.txt / llms-full.txt / robots.txt / sitemap.xml 可访问
+7. 侧栏「原创问答」是独立分组，链接仍是 /practice/original-qa-*，且不在「练习方法」下
+8. 首页「内容目录」有独立的「原创问答」栏目，链接与侧栏一致
 """
 
 import os
@@ -27,6 +29,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(ROOT, "dist")
 SITE = "https://yigelurenjia.com"
 PORT = 4173
+# 侧栏分组与首页目录必须同时指向这些既有网址
+ORIGINAL_QA_LINKS = ["/practice/original-qa-01", "/practice/original-qa-02"]
 
 EXPECTED = [
     "/",
@@ -38,6 +42,7 @@ EXPECTED = [
     "/question-types/impromptu-speech", "/question-types/allegory", "/question-types/research",
     "/practice/review", "/practice/practice-methods", "/practice/note-taking-deep",
     "/practice/repeat-deep", "/practice/practice-with-others",
+    # 原创问答：侧栏独立分组，网址仍在 /practice/ 下，不要改成新路径
     "/practice/original-qa-01", "/practice/original-qa-02",
     "/expression/stop-words", "/expression/spoken-style", "/expression/fluency",
     "/mindset/nervous", "/mindset/anxiety", "/mindset/pace",
@@ -64,6 +69,117 @@ class Handler(SimpleHTTPRequestHandler):
 
     def log_message(self, fmt, *args):  # 静音
         pass
+
+
+def links_in(html):
+    found = []
+    for href in re.findall(r'href="(/[^"#?]*)"', html or ""):
+        href = href.rstrip("/") or "/"
+        if href not in found:
+            found.append(href)
+    return found
+
+
+def heading_block(html, title):
+    """某个 h2/h3 标题之后、下一个同级或更高级标题之前的 HTML。"""
+    matched = re.search(
+        rf"<h([23])\b[^>]*>\s*{re.escape(title)}(?:\s*<a\b[^>]*>.*?</a>)?\s*</h\1>",
+        html,
+        re.S,
+    )
+    if not matched:
+        return None
+    level = int(matched.group(1))
+    rest = html[matched.end():]
+    nxt = re.search(rf"<h([1-{level}])\b", rest)
+    return rest[:nxt.start()] if nxt else rest
+
+
+def sidebar_groups(html):
+    """解析文档页侧栏，返回 [(分组标题, [站内链接]), ...]。"""
+    nav = re.search(r'<nav\b[^>]*\bid="VPSidebarNav"[^>]*>(.*?)</nav>', html, re.S)
+    if not nav:
+        return None
+    groups = []
+    # Vue 会把动态 class 写在静态 class 前面，例如 class="no-transition group"
+    parts = re.split(r'<div class="[^"]*\bgroup\b[^"]*"[^>]*>', nav.group(1))
+    for part in parts[1:]:
+        title_match = re.search(r"<h2\b[^>]*>(.*?)</h2>", part, re.S)
+        if not title_match:
+            continue
+        title = re.sub(r"\s+", "", re.sub(r"<[^>]+>", "", title_match.group(1)))
+        groups.append((title, links_in(part)))
+    return groups
+
+
+def section_body(text, title):
+    matched = re.search(rf"^### {re.escape(title)}\s*$", text, re.M)
+    if not matched:
+        return None
+    rest = text[matched.end():]
+    nxt = re.search(r"^### ", rest, re.M)
+    return rest[:nxt.start()] if nxt else rest
+
+
+def check_original_qa_nav():
+    """侧栏、首页目录、llms 索引三处都把原创问答当作独立栏目，且网址不变。"""
+    problems = []
+    review_path = os.path.join(DIST, "practice", "review.html")
+    home_path = os.path.join(DIST, "index.html")
+
+    if not os.path.exists(review_path):
+        return ["找不到 practice/review.html，无法检查侧栏"]
+    groups = sidebar_groups(open(review_path, encoding="utf-8").read())
+    if not groups:
+        problems.append("侧栏解析失败：practice/review.html 没有 VPSidebarNav")
+    else:
+        by_title = {title: links for title, links in groups}
+        titles = [title for title, _ in groups]
+        if by_title.get("原创问答") != ORIGINAL_QA_LINKS:
+            problems.append(f"侧栏「原创问答」链接不符：{by_title.get('原创问答')}")
+        leaked = [link for link in ORIGINAL_QA_LINKS if link in by_title.get("练习方法", [])]
+        if leaked:
+            problems.append(f"原创问答仍挂在侧栏「练习方法」下：{leaked}")
+        if "练习方法" in titles and "原创问答" in titles:
+            if titles.index("原创问答") != titles.index("练习方法") + 1:
+                problems.append("侧栏「原创问答」应紧跟在「练习方法」之后")
+
+    if not os.path.exists(home_path):
+        problems.append("找不到 index.html，无法检查首页目录")
+    else:
+        home = open(home_path, encoding="utf-8").read()
+        qa_block = heading_block(home, "原创问答")
+        practice_block = heading_block(home, "练习方法")
+        if qa_block is None:
+            problems.append("首页内容目录缺少「原创问答」栏目")
+        else:
+            got = [link for link in links_in(qa_block) if link.startswith("/practice/original-qa")]
+            if got != ORIGINAL_QA_LINKS:
+                problems.append(f"首页「原创问答」链接不符：{got}")
+        if practice_block is not None:
+            leaked = [link for link in ORIGINAL_QA_LINKS if link in links_in(practice_block)]
+            if leaked:
+                problems.append(f"首页「练习方法」仍包含原创问答链接：{leaked}")
+
+    for name in ("llms.txt", "llms-full.txt"):
+        path = os.path.join(DIST, name)
+        if not os.path.exists(path):
+            problems.append(f"找不到 {name}")
+            continue
+        text = open(path, encoding="utf-8").read()
+        qa = section_body(text, "原创问答")
+        practice = section_body(text, "练习方法")
+        if qa is None:
+            problems.append(f"{name} 缺少「原创问答」分类")
+        else:
+            for link in ORIGINAL_QA_LINKS:
+                if f"{SITE}{link}" not in qa:
+                    problems.append(f"{name}「原创问答」缺少 {link}")
+        if practice is not None:
+            for link in ORIGINAL_QA_LINKS:
+                if f"{SITE}{link}" in practice:
+                    problems.append(f"{name}「练习方法」仍包含 {link}")
+    return problems
 
 
 def strip_tags(html: str) -> str:
@@ -183,6 +299,18 @@ def main():
 
         if bad_links or bad_imgs:
             ok = False
+
+        print()
+        print("=" * 72)
+        print("原创问答导航（侧栏独立分组 / 首页目录 / llms，网址保持 /practice/）")
+        print("=" * 72)
+        nav_problems = check_original_qa_nav()
+        if nav_problems:
+            ok = False
+            for item in nav_problems:
+                print("  ❌", item)
+        else:
+            print("  ✅ 原创问答已独立成组，链接仍是 /practice/original-qa-01 与 /practice/original-qa-02")
 
     finally:
         httpd.shutdown()
