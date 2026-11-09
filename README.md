@@ -52,7 +52,7 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 │       └── llms-full.txt      AI 抓取入口（全站正文合集）
 ├── scripts/
 │   ├── gen-llms.py           生成 llms.txt / llms-full.txt
-│   └── verify-build.py       构建产物验证（36 页全量回归）
+│   └── verify-build.py       构建产物验证（38 页全量回归）
 ├── notes/                    未发布的原始笔记素材
 ├── 内容素材/                  501 篇小红书原始素材（未挂导航，版权待确认）
 └── skills/                   Agent 技能包（与站点无关）

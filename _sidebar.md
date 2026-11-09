@@ -32,6 +32,7 @@
   - [复述法详解](/practice/repeat-deep)
   - [对练方法](/practice/practice-with-others)
   - [原创问答精选（一）](/practice/original-qa-01)
+  - [原创问答精选（二）](/practice/original-qa-02)
 
 - 表达能力
   - [口头语消除训练](/expression/stop-words)

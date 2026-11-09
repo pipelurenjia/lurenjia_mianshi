@@ -29,7 +29,7 @@ npm run llms     # 重新生成 llms.txt / llms-full.txt
 npm run build && python scripts/verify-build.py
 ```
 
-该脚本会逐个请求全部 36 个页面，确认正文真实存在于静态 HTML 源码中、canonical/og:url 逐页正确、内链与图片无缺失。
+该脚本会逐个请求全部 38 个页面，确认正文真实存在于静态 HTML 源码中、canonical/og:url 逐页正确、内链与图片无缺失。
 
 ---
 
@@ -59,7 +59,7 @@ npm run build && python scripts/verify-build.py
 │       └── llms-full.txt
 ├── scripts/
 │   ├── gen-llms.py           # 生成 llms.txt / llms-full.txt
-│   └── verify-build.py       # 构建产物验证（36 页回归）
+│   └── verify-build.py       # 构建产物验证（38 页回归）
 ├── notes/                     # 原始笔记素材
 ├── 内容素材/                   # 501 篇小红书素材（未挂导航）
 └── AGENTS.md                  # 本文件
