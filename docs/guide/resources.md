@@ -243,7 +243,6 @@
     <p>打开小红书 App「扫一扫」，扫码进入店铺，全部 4 件商品都在这里。</p>
   </div>
   <div class="lrj-qr-card" data-lrj-event="click_wechat">
-    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="微信二维码">
     <h3>加我微信</h3>
     <p>关于资料和课程的疑问、备考问题想找人聊聊，都可以加我。看到会回。</p>
   </div>
