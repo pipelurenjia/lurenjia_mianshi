@@ -67,7 +67,7 @@ export default defineConfig({
       { text: '资料与课程', link: '/guide/resources' }
     ],
 
-    // 与 _sidebar.md 完全一致的 7 个分类、36 个条目
+    // 与 _sidebar.md 完全一致的 7 个分类、37 个条目
     sidebar: [
       {
         text: '我是小白',
@@ -113,7 +113,8 @@ export default defineConfig({
           { text: '问答笔记法详解', link: '/practice/note-taking-deep' },
           { text: '复述法详解', link: '/practice/repeat-deep' },
           { text: '对练方法', link: '/practice/practice-with-others' },
-          { text: '原创问答精选（一）', link: '/practice/original-qa-01' }
+          { text: '原创问答精选（一）', link: '/practice/original-qa-01' },
+          { text: '原创问答精选（二）', link: '/practice/original-qa-02' }
         ]
       },
       {
@@ -188,6 +189,29 @@ export default defineConfig({
 
   sitemap: {
     hostname: SITE
+  },
+
+  // id=256 的问题在原文里有一处段内换行（「顺序过程，」与「注意点是什么。」之间）。
+  // 页面上保持为同一行，且不把这个换行收成空格、也不删改其它字符。
+  markdown: {
+    config(md) {
+      const prev = md.renderer.rules.softbreak
+      md.renderer.rules.softbreak = (tokens, idx, options, env, self) => {
+        const before = tokens[idx - 1]
+        const after = tokens[idx + 1]
+        if (
+          before &&
+          after &&
+          before.type === 'text' &&
+          after.type === 'text' &&
+          before.content.endsWith('顺序过程，') &&
+          after.content.startsWith('注意点是什么。')
+        ) {
+          return ''
+        }
+        return prev ? prev(tokens, idx, options, env, self) : '\n'
+      }
+    }
   },
 
   // 关键：构建期就为每一页写入正确的 canonical / og:url / og:title
