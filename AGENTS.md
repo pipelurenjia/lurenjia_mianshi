@@ -48,7 +48,7 @@ npm run build && python scripts/verify-build.py
 │   ├── guide/                 # 入门指南 + 资料与课程承接页
 │   ├── method/                # 答题方法论
 │   ├── question-types/        # 题型专训
-│   ├── practice/              # 练习方法；原创问答页也在此（侧栏单独分组，网址不变）
+│   ├── practice/              # 练习方法；原创问答页也在此（侧栏分组「一个路人甲原创问答」，网址不变）
 │   ├── expression/            # 表达能力
 │   ├── mindset/               # 心态调整
 │   ├── experience/            # 真人经验（公开经验贴摘要与原文链接）
@@ -127,7 +127,7 @@ Sidebar is configured in `docs/.vitepress/config.mjs` under `themeConfig.sidebar
 }
 ```
 
-侧栏现为 9 个分组、38 个条目，与根目录 `_sidebar.md` 一致。「原创问答」独立于「练习方法」，目前包含原创问答精选（一）（二）；「真人经验」是独立分组。原创问答页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件。
+侧栏现为 9 个分组、38 个条目，与根目录 `_sidebar.md` 一致。「一个路人甲原创问答」独立于「练习方法」，放在「资料与课程」之前，目前包含原创问答精选（一）（二）；「真人经验」是独立分组。原创问答页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件、不要改栏目下的条目标题。
 
 To add new pages:
 1. Create `.md` file in the appropriate folder under `docs/`

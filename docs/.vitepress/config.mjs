@@ -68,7 +68,8 @@ export default defineConfig({
     ],
 
     // 与 _sidebar.md 完全一致的 9 个分类、38 个条目。
-    // 「原创问答」单独成组；页面仍在 docs/practice/，网址保持 /practice/original-qa-*。
+    // 「一个路人甲原创问答」单独成组，紧挨在「资料与课程」之前；
+    // 页面仍在 docs/practice/，网址保持 /practice/original-qa-*。
     sidebar: [
       {
         text: '我是小白',
@@ -117,13 +118,6 @@ export default defineConfig({
         ]
       },
       {
-        text: '原创问答',
-        items: [
-          { text: '原创问答精选（一）', link: '/practice/original-qa-01' },
-          { text: '原创问答精选（二）', link: '/practice/original-qa-02' }
-        ]
-      },
-      {
         text: '表达能力',
         items: [
           { text: '口头语消除训练', link: '/expression/stop-words' },
@@ -145,6 +139,13 @@ export default defineConfig({
         text: '真人经验',
         items: [
           { text: '经验贴合集', link: '/experience/picks' }
+        ]
+      },
+      {
+        text: '一个路人甲原创问答',
+        items: [
+          { text: '原创问答精选（一）', link: '/practice/original-qa-01' },
+          { text: '原创问答精选（二）', link: '/practice/original-qa-02' }
         ]
       },
       {

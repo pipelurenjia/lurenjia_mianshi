@@ -65,7 +65,7 @@
 - [问答笔记法详解](https://yigelurenjia.com/practice/note-taking-deep)：积累思路最有效的方法：提炼问题与要点，遮住答案复述
 - [复述法详解](https://yigelurenjia.com/practice/repeat-deep)：背诵是低效的，合上材料用自己的话讲出来才是真掌握
 - [对练方法](https://yigelurenjia.com/practice/practice-with-others)：一个人练和对练效果完全不同，讲怎么组织高效对练
-### 原创问答
+### 一个路人甲原创问答
 
 - [原创问答精选（一）](https://yigelurenjia.com/practice/original-qa-01)：十则原创问答原文，按练习方法、答题方法论、表达能力、题型专训分组
 - [原创问答精选（二）](https://yigelurenjia.com/practice/original-qa-02)：第二组十则原创问答原文，按练习方法、答题方法论、表达能力、题型专训分组

@@ -12,8 +12,8 @@
 4. 所有正文内链无死链
 5. 所有引用的图片资源存在
 6. llms.txt / llms-full.txt / robots.txt / sitemap.xml 可访问
-7. 侧栏「原创问答」是独立分组，链接仍是 /practice/original-qa-*，且不在「练习方法」下
-8. 首页「内容目录」有独立的「原创问答」栏目，链接与侧栏一致
+7. 侧栏「一个路人甲原创问答」是独立分组，紧挨在「资料与课程」之前，链接仍是 /practice/original-qa-*，且不在「练习方法」下
+8. 首页「内容目录」和 llms 索引使用同一栏目名，链接与侧栏一致
 """
 
 import os
@@ -30,6 +30,7 @@ DIST = os.path.join(ROOT, "dist")
 SITE = "https://yigelurenjia.com"
 PORT = 4173
 # 侧栏分组与首页目录必须同时指向这些既有网址
+ORIGINAL_QA_GROUP = "一个路人甲原创问答"
 ORIGINAL_QA_LINKS = ["/practice/original-qa-01", "/practice/original-qa-02"]
 
 EXPECTED = [
@@ -123,7 +124,7 @@ def section_body(text, title):
 
 
 def check_original_qa_nav():
-    """侧栏、首页目录、llms 索引三处都把原创问答当作独立栏目，且网址不变。"""
+    """侧栏、首页目录、llms 索引使用同一栏目名，侧栏位于资料与课程之前，网址不变。"""
     problems = []
     review_path = os.path.join(DIST, "practice", "review.html")
     home_path = os.path.join(DIST, "index.html")
@@ -136,27 +137,28 @@ def check_original_qa_nav():
     else:
         by_title = {title: links for title, links in groups}
         titles = [title for title, _ in groups]
-        if by_title.get("原创问答") != ORIGINAL_QA_LINKS:
-            problems.append(f"侧栏「原创问答」链接不符：{by_title.get('原创问答')}")
+        if by_title.get(ORIGINAL_QA_GROUP) != ORIGINAL_QA_LINKS:
+            problems.append(f"侧栏「{ORIGINAL_QA_GROUP}」链接不符：{by_title.get(ORIGINAL_QA_GROUP)}")
         leaked = [link for link in ORIGINAL_QA_LINKS if link in by_title.get("练习方法", [])]
         if leaked:
             problems.append(f"原创问答仍挂在侧栏「练习方法」下：{leaked}")
-        if "练习方法" in titles and "原创问答" in titles:
-            if titles.index("原创问答") != titles.index("练习方法") + 1:
-                problems.append("侧栏「原创问答」应紧跟在「练习方法」之后")
+        if titles[-1:] != ["资料与课程"] or ORIGINAL_QA_GROUP not in titles:
+            problems.append(f"侧栏「{ORIGINAL_QA_GROUP}」应紧挨在最后一项「资料与课程」之前")
+        elif titles.index(ORIGINAL_QA_GROUP) != len(titles) - 2:
+            problems.append(f"侧栏「{ORIGINAL_QA_GROUP}」应是倒数第二项，当前顺序：{titles}")
 
     if not os.path.exists(home_path):
         problems.append("找不到 index.html，无法检查首页目录")
     else:
         home = open(home_path, encoding="utf-8").read()
-        qa_block = heading_block(home, "原创问答")
+        qa_block = heading_block(home, ORIGINAL_QA_GROUP)
         practice_block = heading_block(home, "练习方法")
         if qa_block is None:
-            problems.append("首页内容目录缺少「原创问答」栏目")
+            problems.append(f"首页内容目录缺少「{ORIGINAL_QA_GROUP}」栏目")
         else:
             got = [link for link in links_in(qa_block) if link.startswith("/practice/original-qa")]
             if got != ORIGINAL_QA_LINKS:
-                problems.append(f"首页「原创问答」链接不符：{got}")
+                problems.append(f"首页「{ORIGINAL_QA_GROUP}」链接不符：{got}")
         if practice_block is not None:
             leaked = [link for link in ORIGINAL_QA_LINKS if link in links_in(practice_block)]
             if leaked:
@@ -168,14 +170,14 @@ def check_original_qa_nav():
             problems.append(f"找不到 {name}")
             continue
         text = open(path, encoding="utf-8").read()
-        qa = section_body(text, "原创问答")
+        qa = section_body(text, ORIGINAL_QA_GROUP)
         practice = section_body(text, "练习方法")
         if qa is None:
-            problems.append(f"{name} 缺少「原创问答」分类")
+            problems.append(f"{name} 缺少「{ORIGINAL_QA_GROUP}」分类")
         else:
             for link in ORIGINAL_QA_LINKS:
                 if f"{SITE}{link}" not in qa:
-                    problems.append(f"{name}「原创问答」缺少 {link}")
+                    problems.append(f"{name}「{ORIGINAL_QA_GROUP}」缺少 {link}")
         if practice is not None:
             for link in ORIGINAL_QA_LINKS:
                 if f"{SITE}{link}" in practice:
@@ -303,7 +305,7 @@ def main():
 
         print()
         print("=" * 72)
-        print("原创问答导航（侧栏独立分组 / 首页目录 / llms，网址保持 /practice/）")
+        print("原创问答导航（侧栏倒数第二 / 首页目录 / llms，网址保持 /practice/）")
         print("=" * 72)
         nav_problems = check_original_qa_nav()
         if nav_problems:
@@ -311,7 +313,7 @@ def main():
             for item in nav_problems:
                 print("  ❌", item)
         else:
-            print("  ✅ 原创问答已独立成组，链接仍是 /practice/original-qa-01 与 /practice/original-qa-02")
+            print("  ✅ 「一个路人甲原创问答」紧挨在「资料与课程」之前，链接仍是 /practice/original-qa-01 与 /practice/original-qa-02")
 
     finally:
         httpd.shutdown()

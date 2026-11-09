@@ -156,7 +156,7 @@ features:
 - [复述法详解](/practice/repeat-deep) — 告别背诵，真正掌握
 - [对练方法](/practice/practice-with-others) — 找人对练效果翻倍
 
-### 原创问答
+### 一个路人甲原创问答
 - [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
 - [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
 

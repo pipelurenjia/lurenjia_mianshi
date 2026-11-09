@@ -32,10 +32,6 @@
   - [复述法详解](/practice/repeat-deep)
   - [对练方法](/practice/practice-with-others)
 
-- 原创问答
-  - [原创问答精选（一）](/practice/original-qa-01)
-  - [原创问答精选（二）](/practice/original-qa-02)
-
 - 表达能力
   - [口头语消除训练](/expression/stop-words)
   - [口语化表达](/expression/spoken-style)
@@ -50,6 +46,10 @@
 
 - 真人经验
   - [经验贴合集](/experience/picks)
+
+- 一个路人甲原创问答
+  - [原创问答精选（一）](/practice/original-qa-01)
+  - [原创问答精选（二）](/practice/original-qa-02)
 
 - 资料与课程
   - [配套资料与视频课](/guide/resources)
