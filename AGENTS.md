@@ -48,7 +48,7 @@ npm run build && python scripts/verify-build.py
 │   ├── guide/                 # 入门指南 + 资料与课程承接页
 │   ├── method/                # 答题方法论
 │   ├── question-types/        # 题型专训
-│   ├── practice/              # 练习方法
+│   ├── practice/              # 练习方法；原创问答页也在此（侧栏单独分组，网址不变）
 │   ├── expression/            # 表达能力
 │   ├── mindset/               # 心态调整
 │   └── public/                # 静态资源（原样拷到站点根）
@@ -122,10 +122,14 @@ Sidebar is configured in `docs/.vitepress/config.mjs` under `themeConfig.sidebar
 }
 ```
 
+侧栏现为 8 个分组、37 个条目，与根目录 `_sidebar.md` 一致。「原创问答」独立于「练习方法」，目前包含原创问答精选（一）（二）。这些页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件。
+
 To add new pages:
 1. Create `.md` file in the appropriate folder under `docs/`
-2. Add an entry to `themeConfig.sidebar` in `config.mjs`
-3. Re-run `npm run llms` to refresh the AI entry files
+2. Add an entry to `themeConfig.sidebar` in `config.mjs`，并同步 `_sidebar.md`
+3. Add the same entry to the homepage「内容目录」in `docs/index.md`
+4. Add the page to `PAGES` in `scripts/gen-llms.py`（分类与侧栏一致），then re-run `npm run llms`
+5. If the URL set changes, update `EXPECTED` in `scripts/verify-build.py`
 
 ---
 
@@ -137,9 +141,9 @@ To add new pages:
 3. Update `_sidebar.md` with new section
 
 ### New Article
-1. Create `.md` file in existing folder
+1. Create `.md` file in the folder that owns the URL（原创问答继续放在 `docs/practice/`，不要改已有网址）
 2. Use consistent header format
-3. Add to `_sidebar.md` navigation
+3. Add to `themeConfig.sidebar` and `_sidebar.md`，并同步首页「内容目录」与 `scripts/gen-llms.py`
 
 ---
 

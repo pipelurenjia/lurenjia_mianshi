@@ -41,7 +41,7 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 │   ├── guide/                入门指南 + 资料与课程
 │   ├── method/               答题方法论
 │   ├── question-types/       题型专训
-│   ├── practice/             练习方法
+│   ├── practice/             练习方法；原创问答页也在此（侧栏单独成组，网址仍是 /practice/original-qa-*）
 │   ├── expression/           表达能力
 │   ├── mindset/              心态调整
 │   └── public/               静态资源（原样拷贝到站点根目录）
@@ -76,10 +76,13 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 ## 内容维护
 
 1. 在 `docs/` 对应分类下新增或修改 `.md`
-2. 新页面需同步两处：
-   - `docs/.vitepress/config.mjs` 的 `sidebar`（否则导航里找不到）
-   - 跑一次 `npm run llms` 更新 AI 入口文件
-3. `npm run build && python scripts/verify-build.py` 验证无死链
+2. 新页面需同步：
+   - `docs/.vitepress/config.mjs` 的 `sidebar`（与根目录 `_sidebar.md` 保持一致，否则导航里找不到）
+   - 首页 `docs/index.md` 的「内容目录」
+   - `scripts/gen-llms.py` 的分类，然后跑一次 `npm run llms` 更新 AI 入口文件
+   - 若 URL 有增减，把路径加进 `scripts/verify-build.py` 的 `EXPECTED`
+3. 「原创问答」是独立侧栏分组，源文件仍放在 `docs/practice/`。已有网址（如 `/practice/original-qa-01`）不要改
+4. `npm run build && python scripts/verify-build.py` 验证无死链
 
 ---
 

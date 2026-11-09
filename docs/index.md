@@ -156,6 +156,10 @@ features:
 - [复述法详解](/practice/repeat-deep) — 告别背诵，真正掌握
 - [对练方法](/practice/practice-with-others) — 找人对练效果翻倍
 
+### 原创问答
+- [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
+- [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
+
 ### 表达能力
 - [口头语消除训练](/expression/stop-words) — 系统消除"嗯、那个、就是"
 - [口语化表达](/expression/spoken-style) — 说人话，不是背稿子
