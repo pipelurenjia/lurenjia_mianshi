@@ -214,19 +214,57 @@ export default defineConfig({
     }
   },
 
-  // 关键：构建期就为每一页写入正确的 canonical / og:url
-  // 否则各页面会共用首页的 canonical，等于互相重复
-  transformHead({ pageData }) {
+  // 关键：构建期就为每一页写入正确的 canonical / og:url / og:title
+  // 否则各页会共用首页的 canonical，等于互相重复。
+  // og:title 用 VitePress 已经解析好的文档标题（createTitle）：
+  // 首页 frontmatter 的 titleTemplate 为 false，标题本身就是完整标题，不再追加站点名；
+  // 其他页面仍是「文章标题 | 一个路人甲 · 结构化面试」，与原先规则一致。
+  transformHead({ page, pageData, title, description }) {
     let clean = String(pageData.relativePath || '')
       .replace(/\.md$/, '')
       .replace(/(^|\/)index$/, '')
     if (!clean.startsWith('/')) clean = '/' + clean
     const url = SITE + (clean === '/' ? '/' : clean)
 
-    return [
+    const isHome = page === 'index.md'
+    const isNotFound = page === '404.md'
+    const headline = pageData.title || title
+    const tags = [
       ['link', { rel: 'canonical', href: url }],
       ['meta', { property: 'og:url', content: url }],
-      ['meta', { property: 'og:title', content: `${pageData.title} | 一个路人甲 · 结构化面试` }]
+      ['meta', { property: 'og:title', content: title }]
     ]
+
+    // 结构化数据只用站内已有标题、简介、URL。不写评分、评价、联系方式。
+    if (!isNotFound) {
+      const data = isHome
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: TITLE,
+            url,
+            description,
+            inLanguage: 'zh-CN'
+          }
+        : {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline,
+            description,
+            url,
+            inLanguage: 'zh-CN',
+            author: {
+              '@type': 'Organization',
+              name: '一个路人甲'
+            }
+          }
+      tags.push([
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(data).replace(/</g, '\\u003c')
+      ])
+    }
+
+    return tags
   }
 })

@@ -3,7 +3,7 @@
 > 一个免费、系统、实战的结构化面试自学知识体系。教的是底层思维方法而不是固定套路，覆盖布点法、观点展开法、问答笔记法、复述法、游击战法等原创方法论，以及综合分析、组织管理、应急应变、人际关系等各类题型。
 
 本文件是站点全部正文的完整合集（Markdown 原文），供 AI 系统与检索代理直接读取。
-网站正文由 JavaScript 渲染，不执行 JS 的抓取器请直接读取本文件或 /llms.txt。
+站点由 VitePress 静态生成，每个页面的 HTML 已包含完整正文；本文件仍可作为整站正文的一次性入口。
 
 - 作者：路人甲（自学面试 93 分上岸）
 - 站点：https://yigelurenjia.com
@@ -69,44 +69,9 @@
 
 ---
 
-# 首页 · None
+# 首页 · 一个路人甲 · 结构化面试原创学习体系 | 免费自学资料
 
 来源：https://yigelurenjia.com/
-
----
-layout: home
-title: 一个路人甲 · 结构化面试原创学习体系 | 免费自学资料
-titleTemplate: false
-
-hero:
-  name: 一个路人甲
-  text: 结构化面试原创学习体系
-  tagline: 免费 · 系统 · 实战 —— 打破机构套路，重构思维框架
-  image:
-    src: /assets/img/logo.png
-    alt: 一个路人甲
-  actions:
-    - theme: brand
-      text: 从零开始怎么学
-      link: /guide/start-here
-    - theme: alt
-      text: 上考场急救包
-      link: /guide/emergency
-
-features:
-  - title: 布点法
-    details: 拿到题目先找一条可行的逻辑主线，在主线上布 2-3 个要点，每个再展开 2-3 个小点。
-    link: /method/point-method
-  - title: 观点展开法
-    details: 广度拓展把一个观点拆成组成部分，深度挖掘不断追问为什么和怎么办。
-    link: /method/expand
-  - title: 问答笔记法
-    details: 阅读时提炼问题和要点，复习时遮住答案复述，形成输入-输出的完整闭环。
-    link: /practice/note-taking-deep
-  - title: 复述法
-    details: 合上材料用自己的话讲出来，能讲出来才是真掌握。
-    link: /practice/repeat-deep
----
 
 > **免费、系统、实战** — 从零基础到上岸的完整学习路径。打破机构套路，重构思维框架。
 
@@ -6462,7 +6427,6 @@ AI的能力非常强大，它能够根据大数据模型，给你提供非常详
     <p>打开小红书 App「扫一扫」，扫码进入店铺，全部 4 件商品都在这里。</p>
   </div>
   <div class="lrj-qr-card" data-lrj-event="click_wechat">
-    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="微信二维码">
     <h3>加我微信</h3>
     <p>关于资料和课程的疑问、备考问题想找人聊聊，都可以加我。看到会回。</p>
   </div>

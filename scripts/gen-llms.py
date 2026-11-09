@@ -9,7 +9,7 @@
 
 说明：
 - 内容直接从各目录下的 .md 源文件读取，与网站正文同源，改完文章重跑一次即可。
-- 分类与顺序与 _sidebar.md 保持一致，首页（README.md）排在最前。
+- 分类与顺序与侧栏保持一致，首页（docs/index.md）排在最前。
 - 每条目的简介为手工撰写，勿改成自动抓取（正文里的引用块多是示例，抓出来会错）。
 """
 
@@ -121,13 +121,41 @@ def read_md(route):
         return f.read()
 
 
+FRONTMATTER_RE = re.compile(r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*\r?\n", re.DOTALL)
+
+
+def frontmatter_title(raw):
+    """只取顶层 title:，不把整段 YAML 当正文。"""
+    for line in raw.splitlines():
+        if not line.startswith("title:"):
+            continue
+        value = line.split(":", 1)[1].strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+            value = value[1:-1]
+        return value or None
+    return None
+
+
+def strip_frontmatter(text):
+    matched = FRONTMATTER_RE.match(text)
+    if not matched:
+        return None, text
+    return frontmatter_title(matched.group(1)), text[matched.end():]
+
+
 def split_title_body(text):
-    """拆出第一个 H1 作为标题，其余作为正文。"""
-    lines = text.split("\n")
+    """去掉 YAML frontmatter，再拆出第一个 H1。没有 H1 时用 frontmatter 的 title。"""
+    fm_title, body_text = strip_frontmatter(text)
+    lines = body_text.split("\n")
     for i, line in enumerate(lines):
         if line.startswith("# "):
-            return line[2:].strip(), "\n".join(lines[i + 1:]).strip()
-    return None, text.strip()
+            title = line[2:].strip() or fm_title
+            return title, "\n".join(lines[i + 1:]).strip()
+    return fm_title, body_text.strip()
+
+
+def title_or(title, fallback):
+    return title if title else fallback
 
 
 def main():
@@ -205,7 +233,7 @@ def main():
         f"> {SUMMARY}",
         "",
         "本文件是站点全部正文的完整合集（Markdown 原文），供 AI 系统与检索代理直接读取。",
-        "网站正文由 JavaScript 渲染，不执行 JS 的抓取器请直接读取本文件或 /llms.txt。",
+        "站点由 VitePress 静态生成，每个页面的 HTML 已包含完整正文；本文件仍可作为整站正文的一次性入口。",
         "",
         "- 作者：路人甲（自学面试 93 分上岸）",
         f"- 站点：{SITE}",
@@ -231,7 +259,7 @@ def main():
     text = read_md(HOMEPAGE[0])
     if text:
         title, body = split_title_body(text)
-        full.append(f"# 首页 · {title}")
+        full.append(f"# 首页 · {title_or(title, '站点总览')}")
         full.append("")
         full.append(f"来源：{SITE}/")
         full.append("")
@@ -245,7 +273,7 @@ def main():
             print(f"  [跳过] 找不到 {route}.md")
             continue
         title, body = split_title_body(text)
-        full.append(f"# {title}")
+        full.append(f"# {title_or(title, nav_title)}")
         full.append("")
         full.append(f"来源：{SITE}/{route}")
         full.append("")
