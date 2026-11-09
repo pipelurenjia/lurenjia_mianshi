@@ -29,7 +29,7 @@ npm run llms     # 重新生成 llms.txt / llms-full.txt
 npm run build && python scripts/verify-build.py
 ```
 
-该脚本会逐个请求全部 38 个页面，确认正文真实存在于静态 HTML 源码中、canonical/og:url 逐页正确、内链与图片无缺失。
+该脚本会逐个请求全部 39 个页面，确认正文真实存在于静态 HTML 源码中、canonical/og:url 逐页正确、内链与图片无缺失。
 
 ---
 
@@ -48,9 +48,10 @@ npm run build && python scripts/verify-build.py
 │   ├── guide/                 # 入门指南 + 资料与课程承接页
 │   ├── method/                # 答题方法论
 │   ├── question-types/        # 题型专训
-│   ├── practice/              # 练习方法；原创问答页也在此（侧栏单独分组，网址不变）
+│   ├── practice/              # 练习方法；原创问答页也在此（侧栏分组「一个路人甲原创问答」，网址不变）
 │   ├── expression/            # 表达能力
 │   ├── mindset/               # 心态调整
+│   ├── experience/            # 真人经验（公开经验贴摘要与原文链接）
 │   └── public/                # 静态资源（原样拷到站点根）
 │       ├── assets/img/        # 引流组件用图
 │       ├── favicon.ico
@@ -59,7 +60,7 @@ npm run build && python scripts/verify-build.py
 │       └── llms-full.txt
 ├── scripts/
 │   ├── gen-llms.py           # 生成 llms.txt / llms-full.txt
-│   └── verify-build.py       # 构建产物验证（38 页回归）
+│   └── verify-build.py       # 构建产物验证（39 页回归）
 ├── notes/                     # 原始笔记素材
 ├── 内容素材/                   # 501 篇小红书素材（未挂导航）
 └── AGENTS.md                  # 本文件
@@ -101,6 +102,10 @@ npm run build && python scripts/verify-build.py
 - Folder names: Chinese (e.g., `framework/`, `skills/`)
 - Navigation: Use descriptive Chinese titles
 
+### 真人经验
+
+`docs/experience/` 只整理公开经验贴的摘要与链接：标题、原作者、平台、发布时间、自写概括、原文外链。不放原文全文或大段引文，不对外展示转载限制说明，不写联系方式或二维码。外链使用 `rel="nofollow noopener"`，并在新窗口打开。页面不加评分，不作效果承诺。
+
 ### Writing Style
 
 1. **Tone**: Professional but approachable
@@ -122,7 +127,7 @@ Sidebar is configured in `docs/.vitepress/config.mjs` under `themeConfig.sidebar
 }
 ```
 
-侧栏现为 8 个分组、37 个条目，与根目录 `_sidebar.md` 一致。「原创问答」独立于「练习方法」，目前包含原创问答精选（一）（二）。这些页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件。
+侧栏现为 9 个分组、38 个条目，与根目录 `_sidebar.md` 一致。「一个路人甲原创问答」独立于「练习方法」，放在「资料与课程」之前，目前包含原创问答精选（一）（二）；「真人经验」是独立分组。原创问答页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件、不要改栏目下的条目标题。
 
 To add new pages:
 1. Create `.md` file in the appropriate folder under `docs/`

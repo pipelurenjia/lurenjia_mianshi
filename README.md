@@ -41,9 +41,10 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 │   ├── guide/                入门指南 + 资料与课程
 │   ├── method/               答题方法论
 │   ├── question-types/       题型专训
-│   ├── practice/             练习方法；原创问答页也在此（侧栏单独成组，网址仍是 /practice/original-qa-*）
+│   ├── practice/             练习方法；原创问答页也在此（侧栏分组「一个路人甲原创问答」，网址仍是 /practice/original-qa-*）
 │   ├── expression/           表达能力
 │   ├── mindset/              心态调整
+│   ├── experience/           真人经验（公开经验贴摘要与原文链接）
 │   └── public/               静态资源（原样拷贝到站点根目录）
 │       ├── assets/img/       图片
 │       ├── favicon.ico
@@ -52,7 +53,7 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
 │       └── llms-full.txt      AI 抓取入口（全站正文合集）
 ├── scripts/
 │   ├── gen-llms.py           生成 llms.txt / llms-full.txt
-│   └── verify-build.py       构建产物验证（38 页全量回归）
+│   └── verify-build.py       构建产物验证（39 页全量回归）
 ├── notes/                    未发布的原始笔记素材
 ├── 内容素材/                  501 篇小红书原始素材（未挂导航，版权待确认）
 └── skills/                   Agent 技能包（与站点无关）
@@ -81,8 +82,9 @@ npm run llms         # 重新生成 llms.txt / llms-full.txt
    - 首页 `docs/index.md` 的「内容目录」
    - `scripts/gen-llms.py` 的分类，然后跑一次 `npm run llms` 更新 AI 入口文件
    - 若 URL 有增减，把路径加进 `scripts/verify-build.py` 的 `EXPECTED`
-3. 「原创问答」是独立侧栏分组，源文件仍放在 `docs/practice/`。已有网址（如 `/practice/original-qa-01`）不要改
-4. `npm run build && python scripts/verify-build.py` 验证无死链
+3. 「一个路人甲原创问答」是独立侧栏分组，紧挨在「资料与课程」之前。源文件仍放在 `docs/practice/`。已有网址（如 `/practice/original-qa-01`）和条目标题不要改
+4. `docs/experience/` 只放公开经验贴的标题、原作者、平台、发布时间、自写概括和原文外链，不转载全文，不写联系方式
+5. `npm run build && python scripts/verify-build.py` 验证无死链
 
 ---
 

@@ -156,7 +156,7 @@ features:
 - [复述法详解](/practice/repeat-deep) — 告别背诵，真正掌握
 - [对练方法](/practice/practice-with-others) — 找人对练效果翻倍
 
-### 原创问答
+### 一个路人甲原创问答
 - [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
 - [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
 
@@ -170,6 +170,9 @@ features:
 - [焦虑缓解方法](/mindset/anxiety) — 学会和焦虑共处
 - [备考节奏把控](/mindset/pace) — 不同阶段的节奏安排
 - [备考厌学怎么办](/mindset/study-fatigue) — 找回学习动力
+
+### 真人经验
+- [经验贴合集](/experience/picks) — 公开经验贴的摘要与原文链接
 
 ---
 
