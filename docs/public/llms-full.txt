@@ -3,7 +3,7 @@
 > 一个免费、系统、实战的结构化面试自学知识体系。教的是底层思维方法而不是固定套路，覆盖布点法、观点展开法、问答笔记法、复述法、游击战法等原创方法论，以及综合分析、组织管理、应急应变、人际关系等各类题型。
 
 本文件是站点全部正文的完整合集（Markdown 原文），供 AI 系统与检索代理直接读取。
-网站正文由 JavaScript 渲染，不执行 JS 的抓取器请直接读取本文件或 /llms.txt。
+站点由 VitePress 静态生成，每个页面的 HTML 已包含完整正文；本文件仍可作为整站正文的一次性入口。
 
 - 作者：路人甲（自学面试 93 分上岸）
 - 站点：https://yigelurenjia.com
@@ -68,44 +68,9 @@
 
 ---
 
-# 首页 · None
+# 首页 · 一个路人甲 · 结构化面试原创学习体系 | 免费自学资料
 
 来源：https://yigelurenjia.com/
-
----
-layout: home
-title: 一个路人甲 · 结构化面试原创学习体系 | 免费自学资料
-titleTemplate: false
-
-hero:
-  name: 一个路人甲
-  text: 结构化面试原创学习体系
-  tagline: 免费 · 系统 · 实战 —— 打破机构套路，重构思维框架
-  image:
-    src: /assets/img/logo.png
-    alt: 一个路人甲
-  actions:
-    - theme: brand
-      text: 从零开始怎么学
-      link: /guide/start-here
-    - theme: alt
-      text: 上考场急救包
-      link: /guide/emergency
-
-features:
-  - title: 布点法
-    details: 拿到题目先找一条可行的逻辑主线，在主线上布 2-3 个要点，每个再展开 2-3 个小点。
-    link: /method/point-method
-  - title: 观点展开法
-    details: 广度拓展把一个观点拆成组成部分，深度挖掘不断追问为什么和怎么办。
-    link: /method/expand
-  - title: 问答笔记法
-    details: 阅读时提炼问题和要点，复习时遮住答案复述，形成输入-输出的完整闭环。
-    link: /practice/note-taking-deep
-  - title: 复述法
-    details: 合上材料用自己的话讲出来，能讲出来才是真掌握。
-    link: /practice/repeat-deep
----
 
 > **免费、系统、实战** — 从零基础到上岸的完整学习路径。打破机构套路，重构思维框架。
 
@@ -245,7 +210,7 @@ features:
 
 ## 核心理念
 
-### 我们相信
+### 我相信
 
 1. **面试是练出来的，不是听出来的**
    
@@ -263,7 +228,7 @@ features:
    
    考官听了无数遍套路，真实的想法、接地气的表达，反而更能打动人。
 
-### 我们不相信
+### 我不相信
 
 - ❌ 背模板就能拿高分
 - ❌ 金句开头的答案更出彩
@@ -290,15 +255,11 @@ features:
 
 核心理念可能有相似之处，但这里更强调**底层思维**而非固定模板。每道题可以有多种答法，找到适合自己的才是最好的。
 
-### Q: 有没有一对一辅导？
-
-目前不提供一对一服务。这个网站的目的就是让每个人都能通过自学上岸。
-
 ---
 
 ## 关于作者
 
-我是路人甲，自学面试93分上岸。
+我是一个路人甲，自学面试93分上岸。
 
 没有培训机构的背景，没有包装过头衔。只是一个普通人，把自己摸索出来的方法分享出来。
 
@@ -6257,6 +6218,14 @@ AI的能力非常强大，它能够根据大数据模型，给你提供非常详
 
 页面标价为原价。小红书店铺会不定期发放平台券、参与平台活动，进店后的实际到手价通常低于标价，具体以店铺实时活动为准。
 
+<figure class="lrj-shop-shot">
+  <div class="lrj-shot-frame">
+    <img src="/assets/img/xhs-shop.jpg" width="1080" height="648" alt="小红书店铺「一个路人甲（自学面试上岸）」主页：4.6 分、已售 1.1 万、粉丝 4.8 万、好评率 100%" loading="lazy">
+  </div>
+  <figcaption>小红书店铺主页</figcaption>
+</figure>
+
+
 <div class="lrj-copy">
   <div class="lrj-copy-main">
     <code class="lrj-copy-url">https://xhslink.com/m/AWr1kqYCuNM</code>
@@ -6264,7 +6233,7 @@ AI的能力非常强大，它能够根据大数据模型，给你提供非常详
   </div>
   <div class="lrj-copy-actions">
     <button type="button" class="lrj-copy-btn" data-lrj-copy="推荐小红书好店一个路人甲（自学面试上岸），4件商品热卖中 3MrwFsB4Pqt https://xhslink.com/m/AWr1kqYCuNM 点击链接或者复制本条信息打开【小红书app】查看 MU1352">复制口令</button>
-    <a class="lrj-open-btn" href="https://xhslink.com/m/AWr1kqYCuNM" target="_blank" rel="noopener">直接打开店铺</a>
+    <a class="lrj-open-btn" data-lrj-shop data-lrj-event="click_buy_xhs" href="https://www.xiaohongshu.com/shop/65994c2c096eae0001305ee2" target="_blank" rel="noopener">直接打开店铺</a>
   </div>
 </div>
 
@@ -6279,7 +6248,6 @@ AI的能力非常强大，它能够根据大数据模型，给你提供非常详
     <p>打开小红书 App「扫一扫」，扫码进入店铺，全部 4 件商品都在这里。</p>
   </div>
   <div class="lrj-qr-card" data-lrj-event="click_wechat">
-    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="微信二维码">
     <h3>加我微信</h3>
     <p>关于资料和课程的疑问、备考问题想找人聊聊，都可以加我。看到会回。</p>
   </div>
