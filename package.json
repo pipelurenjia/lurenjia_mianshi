@@ -6,9 +6,9 @@
   "description": "一个路人甲 · 结构化面试原创学习体系",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "python3 scripts/gen-lastmod.py && vitepress build docs",
     "preview": "vitepress preview docs",
-    "llms": "python scripts/gen-llms.py"
+    "llms": "python3 scripts/gen-llms.py"
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

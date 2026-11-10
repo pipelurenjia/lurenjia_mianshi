@@ -106,9 +106,10 @@ User-agent: DeepSeekBot
 Allow: /
 
 # ========== AI 抓取入口（llms.txt 规范 https://llmstxt.org）==========
+# 页面由 VitePress 输出静态 HTML，正文在首次响应里。
 # 摘要索引：/llms.txt
-# 全站正文合集（Markdown 原文，一次抓取拿全站）：/llms-full.txt
-# 注意：正文由 JavaScript 渲染，不执行 JS 的抓取器请直接读取上述两个文件
+# 全站正文合集（Markdown 原文）：/llms-full.txt
+# Google 说明 llms.txt 不影响 Google 搜索收录；文件保留给其他会读取它的系统。
 
 # ========== 站点地图 ==========
 Sitemap: https://yigelurenjia.com/sitemap.xml

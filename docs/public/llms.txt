@@ -31,7 +31,7 @@
 
 ## 全部内容
 
-### 入门指南
+### 我是小白
 
 - [从零开始怎么学](https://yigelurenjia.com/guide/start-here)：按「完全小白 / 学了但混乱 / 能答但质量不高」三种状态分流，给出各自的学习路径与周期
 - [游击战法：快速入门](https://yigelurenjia.com/guide/guerrilla)：不纠结一城一地得失，先用 2-3 小时了解题型就大量开练，边打边学

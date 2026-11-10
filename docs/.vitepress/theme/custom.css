@@ -534,6 +534,7 @@
 }
 .lrj-side-card img {
   width: 64px;
+  height: auto;
   display: block;
   margin: 0 auto 8px;
 }
@@ -598,6 +599,25 @@
   text-decoration: none !important;
   font-size: 14px;
   font-weight: 600;
+}
+
+/* 可见面包屑，与 JSON-LD 的「首页 / 当前篇」一致 */
+.lrj-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  align-items: baseline;
+  margin: 0 0 0.75rem;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #7a9187;
+}
+.lrj-breadcrumb a {
+  color: #348f6b;
+  text-decoration: none;
+}
+.lrj-breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 /* 图片点击放大 */

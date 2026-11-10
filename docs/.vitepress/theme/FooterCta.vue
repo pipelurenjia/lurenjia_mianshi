@@ -11,7 +11,7 @@ const show = computed(() => (route.path || '').indexOf('resources') === -1)
 
 <template>
   <div v-if="show" class="lrj-footer-cta">
-    <img :src="logoSrc" alt="一个路人甲" />
+    <img :src="logoSrc" width="240" height="204" alt="一个路人甲标志" />
     <div class="lrj-cta-text">
       <p class="lrj-cta-title">配套资料与视频课</p>
       <p class="lrj-cta-sub">思维总结 · 答题示例 · 视频课，网站内容之外更系统的整理</p>

@@ -168,7 +168,7 @@ To add new pages:
 | 类名 | 用途 | 位置 |
 |------|------|------|
 | `.lrj-cover-cta` | 首页底部资料入口 | `docs/index.md` |
-| `.lrj-side-card` | 侧栏底部常驻「关于我」卡片 | `docs/.vitepress/config.mjs`（侧栏尾部 HTML） |
+| `.lrj-side-card` | 侧栏底部常驻「关于我」卡片 | `docs/.vitepress/theme/SideCard.vue`，经 `sidebar-nav-after` 插入 |
 | `.lrj-hero` / `.lrj-grid` / `.lrj-card` | 承接页主推卡与商品卡 | `docs/guide/resources.md` |
 | `.lrj-quote` | 买家评价引用 | `docs/guide/resources.md` |
 | `.lrj-buy` / `.lrj-qr-card` | 二维码转化区 | `docs/guide/resources.md` |

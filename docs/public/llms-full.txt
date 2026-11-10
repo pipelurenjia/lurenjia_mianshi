@@ -16,7 +16,7 @@
 
 - [首页](https://yigelurenjia.com/)：站点总览：核心价值、学习路径与完整目录
 
-### 入门指南
+### 我是小白
 - [从零开始怎么学](https://yigelurenjia.com/guide/start-here)：按「完全小白 / 学了但混乱 / 能答但质量不高」三种状态分流，给出各自的学习路径与周期
 - [游击战法：快速入门](https://yigelurenjia.com/guide/guerrilla)：不纠结一城一地得失，先用 2-3 小时了解题型就大量开练，边打边学
 - [上考场急救包](https://yigelurenjia.com/guide/emergency)：只剩几天就要面试时的应急策略，帮你撑住场面
@@ -173,7 +173,7 @@
 
 ## 内容目录
 
-### 入门指南
+### 我是小白
 - [从零开始怎么学](/guide/start-here) — 按状态分流的学习路径
 - [游击战法：快速入门](/guide/guerrilla) — 边打边学的高效方法
 - [上考场急救包](/guide/emergency) — 时间紧迫时的应急策略
@@ -182,9 +182,12 @@
 ### 答题方法论
 - [布点法：如何快速破题](/method/point-method) — 找逻辑主线，化整为零
 - [观点展开：怎么说清楚](/method/expand) — 追问法、细化法、分层法
+- [观点展开法：完整版](/method/point-expand) — 观点要明确，答完再补全
 - [广度深度：展不开怎么办](/method/breadth-depth) — 广度拓展+深度挖掘
 - [化虚为实：避免车轱辘话](/method/concrete) — 把抽象变具体
 - [答题同质化怎么破](/method/break-homogenization) — 上高度或抓细节
+- [提高深度：洞察事物内在联系](/method/improve-depth) — 深度是看到事物之间的联系
+- [宏观练习：大量答题把握规律](/method/practice-macro) — 见得多了才不觉得每题都是新题
 
 ### 题型专训
 - [综合分析题](/question-types/comprehensive) — 是什么→为什么→怎么办
@@ -194,16 +197,15 @@
 - [情景模拟题](/question-types/simulation) — 代入角色，自然表达
 - [态度观点题怎么答](/question-types/attitude-viewpoint) — 来龙去脉法
 - [即兴演讲题怎么答](/question-types/impromptu-speech) — 忘记演讲，正常答题
+- [漫画名言哲理题](/question-types/allegory) — 先讲清道理，再按综合分析来答
+- [调研类题目](/question-types/research) — 先弄清调研目的，再设计内容
 
 ### 练习方法
 - [复盘方法论](/practice/review) — 浅复盘与深复盘
+- [高效练习方法](/practice/practice-methods) — 关键词输出、限时思考和练习量
 - [问答笔记法详解](/practice/note-taking-deep) — 最高效的积累方法
 - [复述法详解](/practice/repeat-deep) — 告别背诵，真正掌握
 - [对练方法](/practice/practice-with-others) — 找人对练效果翻倍
-
-### 一个路人甲原创问答
-- [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
-- [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
 
 ### 表达能力
 - [口头语消除训练](/expression/stop-words) — 系统消除"嗯、那个、就是"
@@ -215,9 +217,17 @@
 - [焦虑缓解方法](/mindset/anxiety) — 学会和焦虑共处
 - [备考节奏把控](/mindset/pace) — 不同阶段的节奏安排
 - [备考厌学怎么办](/mindset/study-fatigue) — 找回学习动力
+- [心态答疑：坚持还是放弃](/mindset/mindset) — 去不去、要不要休息、前期要不要抠细节
 
 ### 真人经验
 - [经验贴合集](/experience/picks) — 公开经验贴的摘要与原文链接
+
+### 一个路人甲原创问答
+- [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
+- [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
+
+### 资料与课程
+- [配套资料与视频课](/guide/resources) — 网站文章之外的视频课和文字资料
 
 ---
 
@@ -2113,7 +2123,7 @@
 
 ---
 
-# 怎么提高深度
+## 怎么提高深度
 
 老师，请问综合分析题分析单薄怎么办，对策也只是提机构那些常见的对策，感觉自己缺乏亮点，这种思维上的拓展要怎么提升？因为面试需要往上翻，所以中规中矩的那套就不适用了，这种情况要如何出彩拿高分呢？
 
@@ -2267,7 +2277,7 @@
 
 ---
 
-# 答题观点要明确
+## 答题观点要明确
 
 > 答题的核心观点不要和稀泥，核心观点要明确、犀利。但是答完核心观点之后又要找补一下，体现出周全。
 
@@ -3555,7 +3565,7 @@
 
 ---
 
-# 材料结构化题型
+## 材料结构化题型
 
 ## 文化文物遗产
 
@@ -3794,7 +3804,7 @@
 
 ---
 
-# 高效复盘方法
+## 高效复盘方法
 
 很多同学一道题要花一到两个小时的时间复盘，这都不叫复盘了，这叫纯粹的浪费时间，说难听点，是一种自我感动。
 
@@ -6582,12 +6592,12 @@ AI的能力非常强大，它能够根据大数据模型，给你提供非常详
 
 <div class="lrj-buy">
   <div class="lrj-qr-card" data-lrj-event="click_buy_xhs">
-    <img src="/assets/img/xhs-qr.png" width="340" height="340" alt="小红书二维码">
+    <img src="/assets/img/xhs-qr.png" width="340" height="340" alt="用小红书 App 扫一扫的二维码">
     <h3>扫码进店</h3>
     <p>打开小红书 App「扫一扫」，扫码进入店铺，全部 4 件商品都在这里。</p>
   </div>
   <div class="lrj-qr-card" data-lrj-event="click_wechat">
-    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="微信二维码">
+    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="路人甲的个人微信二维码">
     <h3>加我微信</h3>
     <p>关于资料和课程的疑问、备考问题想找人聊聊，都可以加我。看到会回。</p>
   </div>

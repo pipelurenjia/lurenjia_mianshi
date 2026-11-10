@@ -1,3 +1,8 @@
+---
+title: "资料与课程"
+description: "介绍配套视频课和文字资料的内容与购买方式。网站上的学习文章可以免费阅读。"
+---
+
 # 资料与课程
 
 网站上的所有内容会一直免费。如果你在练习中想要更系统的整理，这里是我能提供的东西。
@@ -238,12 +243,12 @@
 
 <div class="lrj-buy">
   <div class="lrj-qr-card" data-lrj-event="click_buy_xhs">
-    <img src="/assets/img/xhs-qr.png" width="340" height="340" alt="小红书二维码">
+    <img src="/assets/img/xhs-qr.png" width="340" height="340" alt="用小红书 App 扫一扫的二维码">
     <h3>扫码进店</h3>
     <p>打开小红书 App「扫一扫」，扫码进入店铺，全部 4 件商品都在这里。</p>
   </div>
   <div class="lrj-qr-card" data-lrj-event="click_wechat">
-    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="微信二维码">
+    <img src="/assets/img/wechat-qr.png" width="340" height="340" alt="路人甲的个人微信二维码">
     <h3>加我微信</h3>
     <p>关于资料和课程的疑问、备考问题想找人聊聊，都可以加我。看到会回。</p>
   </div>

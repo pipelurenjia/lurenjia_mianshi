@@ -2,6 +2,8 @@ import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import { inBrowser } from 'vitepress'
 import FooterCta from './FooterCta.vue'
+import SideCard from './SideCard.vue'
+import DocBreadcrumb from './DocBreadcrumb.vue'
 import './custom.css'
 
 const SITE = 'https://yigelurenjia.com'
@@ -39,6 +41,13 @@ function syncCanonical() {
   link.setAttribute('href', full)
 
   ensureMeta('og:url', full)
+
+  const title = document.title
+  const descEl = document.querySelector('meta[name="description"]')
+  const desc = descEl ? descEl.getAttribute('content') || '' : ''
+  if (title) ensureMeta('og:title', title)
+  if (desc) ensureMeta('og:description', desc)
+  ensureMeta('og:type', normalize(location.pathname) === '/' ? 'website' : 'article')
 }
 
 /** 图片点击放大 */
@@ -185,7 +194,9 @@ export default {
     // 文末引流块仅在文档页（doc-after）展示，首页暂不启用，后续再决定位置
     // 承接页由 FooterCta 自身逻辑跳过
     return h(DefaultTheme.Layout, null, {
-      'doc-after': () => h(FooterCta)
+      'doc-before': () => h(DocBreadcrumb),
+      'doc-after': () => h(FooterCta),
+      'sidebar-nav-after': () => h(SideCard)
     })
   },
   enhanceApp({ router }) {
