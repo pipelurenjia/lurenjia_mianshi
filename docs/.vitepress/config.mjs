@@ -1,6 +1,26 @@
+import { readFileSync } from 'node:fs'
 import { defineConfig } from 'vitepress'
 
 const SITE = 'https://yigelurenjia.com'
+const LASTMOD = JSON.parse(readFileSync(new URL('./lastmod.json', import.meta.url), 'utf8'))
+
+function canonicalPath(url) {
+  let path = String(url || '')
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    try {
+      path = new URL(path).pathname
+    } catch {
+      path = '/'
+    }
+  }
+  path = path.split('?')[0].split('#')[0].replace(/\\/g, '/')
+  path = path.replace(/\.html$/, '').replace(/\.md$/, '')
+  path = path.replace(/(^|\/)index$/, '$1')
+  if (!path.startsWith('/')) path = `/${path}`
+  path = path.replace(/\/{2,}/g, '/')
+  if (path.length > 1) path = path.replace(/\/$/, '')
+  return path || '/'
+}
 const TITLE = '一个路人甲 · 结构化面试'
 const FULL_TITLE = '一个路人甲 · 结构化面试原创学习体系 | 免费自学资料'
 const DESCRIPTION =
@@ -29,6 +49,9 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/assets/img/apple-touch-icon.png' }],
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['meta', { name: 'theme-color', content: '#348f6b' }],
+    ['meta', { name: 'applicable-device', content: 'pc,mobile' }],
+    ['link', { rel: 'preconnect', href: 'https://hm.baidu.com' }],
+    ['link', { rel: 'preconnect', href: 'https://static.cloudflareinsights.com' }],
 
     // 百度搜索资源平台站点归属验证（勿删除，删除后验证状态会失效）
     // 两条分别对应 www.yigelurenjia.com 与 yigelurenjia.com 两个站点属性
@@ -41,6 +64,9 @@ export default defineConfig({
     ['meta', { property: 'og:title', content: FULL_TITLE }],
     ['meta', { property: 'og:description', content: DESCRIPTION }],
     ['meta', { property: 'og:image', content: `${SITE}/assets/img/logo.png` }],
+    ['meta', { property: 'og:image:width', content: '240' }],
+    ['meta', { property: 'og:image:height', content: '204' }],
+    ['meta', { property: 'og:image:alt', content: '一个路人甲标志' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
 
@@ -201,7 +227,23 @@ export default defineConfig({
   },
 
   sitemap: {
-    hostname: SITE
+    hostname: SITE,
+    lastmodDateOnly: false,
+    transformItems(items) {
+      return items
+        .filter((item) => canonicalPath(item.url) !== '/404')
+        .map((item) => {
+          const iso = LASTMOD[canonicalPath(item.url)]
+          return iso ? { ...item, lastmod: new Date(iso) } : item
+        })
+    }
+  },
+
+  transformPageData(pageData) {
+    const iso = LASTMOD[canonicalPath(pageData.relativePath)]
+    if (!iso) return
+    const ms = Date.parse(iso)
+    if (!Number.isNaN(ms)) pageData.lastUpdated = ms
   },
 
   // id=256 的问题在原文里有一处段内换行（「顺序过程，」与「注意点是什么。」之间）。
@@ -233,11 +275,8 @@ export default defineConfig({
   // 首页 frontmatter 的 titleTemplate 为 false，标题本身就是完整标题，不再追加站点名；
   // 其他页面仍是「文章标题 | 一个路人甲 · 结构化面试」，与原先规则一致。
   transformHead({ page, pageData, title, description }) {
-    let clean = String(pageData.relativePath || '')
-      .replace(/\.md$/, '')
-      .replace(/(^|\/)index$/, '')
-    if (!clean.startsWith('/')) clean = '/' + clean
-    const url = SITE + (clean === '/' ? '/' : clean)
+    const urlPath = canonicalPath(pageData.relativePath || page || '')
+    const url = SITE + (urlPath === '/' ? '/' : urlPath)
 
     const isHome = page === 'index.md'
     const isNotFound = page === '404.md'
@@ -245,36 +284,61 @@ export default defineConfig({
     const tags = [
       ['link', { rel: 'canonical', href: url }],
       ['meta', { property: 'og:url', content: url }],
-      ['meta', { property: 'og:title', content: title }]
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:type', content: isHome ? 'website' : 'article' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }]
     ]
 
-    // 结构化数据只用站内已有标题、简介、URL。不写评分、评价、联系方式。
+    // 结构化数据只用站内已有标题、简介、URL 和提交时间。不写评分、评价、联系方式。
     if (!isNotFound) {
-      const data = isHome
-        ? {
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: TITLE,
-            url,
-            description,
-            inLanguage: 'zh-CN'
-          }
-        : {
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline,
-            description,
-            url,
-            inLanguage: 'zh-CN',
-            author: {
-              '@type': 'Organization',
-              name: '一个路人甲'
+      const iso = LASTMOD[urlPath]
+      const graph = isHome
+        ? [
+            {
+              '@type': 'WebSite',
+              '@id': `${url}#website`,
+              name: TITLE,
+              url,
+              description,
+              inLanguage: 'zh-CN'
             }
-          }
+          ]
+        : [
+            {
+              '@type': 'WebPage',
+              '@id': `${url}#webpage`,
+              url,
+              name: headline,
+              description,
+              inLanguage: 'zh-CN',
+              isPartOf: { '@type': 'WebSite', name: TITLE, url: `${SITE}/` },
+              breadcrumb: { '@id': `${url}#breadcrumb` }
+            },
+            {
+              '@type': 'Article',
+              headline,
+              description,
+              url,
+              inLanguage: 'zh-CN',
+              mainEntityOfPage: url,
+              author: { '@type': 'Person', name: '路人甲' },
+              ...(iso ? { dateModified: iso } : {})
+            },
+            {
+              '@type': 'BreadcrumbList',
+              '@id': `${url}#breadcrumb`,
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: '首页', item: `${SITE}/` },
+                { '@type': 'ListItem', position: 2, name: headline }
+              ]
+            }
+          ]
       tags.push([
         'script',
         { type: 'application/ld+json' },
-        JSON.stringify(data).replace(/</g, '\\u003c')
+        JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')
       ])
     }
 

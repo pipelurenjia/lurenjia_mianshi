@@ -2,6 +2,7 @@
 layout: home
 title: 一个路人甲 · 结构化面试原创学习体系 | 免费自学资料
 titleTemplate: false
+description: 免费的结构化面试自学资料。按入门、答题方法、题型、练习、表达和心态整理，并收录原创问答和公开经验贴摘要。
 
 hero:
   name: 一个路人甲
@@ -9,7 +10,7 @@ hero:
   tagline: 免费 · 系统 · 实战 —— 打破机构套路，重构思维框架
   image:
     src: /assets/img/logo.png
-    alt: 一个路人甲
+    alt: 一个路人甲标志
   actions:
     - theme: brand
       text: 从零开始怎么学
@@ -128,7 +129,7 @@ features:
 
 ## 内容目录
 
-### 入门指南
+### 我是小白
 - [从零开始怎么学](/guide/start-here) — 按状态分流的学习路径
 - [游击战法：快速入门](/guide/guerrilla) — 边打边学的高效方法
 - [上考场急救包](/guide/emergency) — 时间紧迫时的应急策略
@@ -137,9 +138,12 @@ features:
 ### 答题方法论
 - [布点法：如何快速破题](/method/point-method) — 找逻辑主线，化整为零
 - [观点展开：怎么说清楚](/method/expand) — 追问法、细化法、分层法
+- [观点展开法：完整版](/method/point-expand) — 观点要明确，答完再补全
 - [广度深度：展不开怎么办](/method/breadth-depth) — 广度拓展+深度挖掘
 - [化虚为实：避免车轱辘话](/method/concrete) — 把抽象变具体
 - [答题同质化怎么破](/method/break-homogenization) — 上高度或抓细节
+- [提高深度：洞察事物内在联系](/method/improve-depth) — 深度是看到事物之间的联系
+- [宏观练习：大量答题把握规律](/method/practice-macro) — 见得多了才不觉得每题都是新题
 
 ### 题型专训
 - [综合分析题](/question-types/comprehensive) — 是什么→为什么→怎么办
@@ -149,16 +153,15 @@ features:
 - [情景模拟题](/question-types/simulation) — 代入角色，自然表达
 - [态度观点题怎么答](/question-types/attitude-viewpoint) — 来龙去脉法
 - [即兴演讲题怎么答](/question-types/impromptu-speech) — 忘记演讲，正常答题
+- [漫画名言哲理题](/question-types/allegory) — 先讲清道理，再按综合分析来答
+- [调研类题目](/question-types/research) — 先弄清调研目的，再设计内容
 
 ### 练习方法
 - [复盘方法论](/practice/review) — 浅复盘与深复盘
+- [高效练习方法](/practice/practice-methods) — 关键词输出、限时思考和练习量
 - [问答笔记法详解](/practice/note-taking-deep) — 最高效的积累方法
 - [复述法详解](/practice/repeat-deep) — 告别背诵，真正掌握
 - [对练方法](/practice/practice-with-others) — 找人对练效果翻倍
-
-### 一个路人甲原创问答
-- [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
-- [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
 
 ### 表达能力
 - [口头语消除训练](/expression/stop-words) — 系统消除"嗯、那个、就是"
@@ -170,9 +173,17 @@ features:
 - [焦虑缓解方法](/mindset/anxiety) — 学会和焦虑共处
 - [备考节奏把控](/mindset/pace) — 不同阶段的节奏安排
 - [备考厌学怎么办](/mindset/study-fatigue) — 找回学习动力
+- [心态答疑：坚持还是放弃](/mindset/mindset) — 去不去、要不要休息、前期要不要抠细节
 
 ### 真人经验
 - [经验贴合集](/experience/picks) — 公开经验贴的摘要与原文链接
+
+### 一个路人甲原创问答
+- [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
+- [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
+
+### 资料与课程
+- [配套资料与视频课](/guide/resources) — 网站文章之外的视频课和文字资料
 
 ---
 

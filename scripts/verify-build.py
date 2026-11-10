@@ -9,25 +9,37 @@
 1. 全部 39 个页面返回 200，且正文真实存在于静态 HTML 源码中（P0-1 回归测试）
 2. 每页 canonical / og:url 逐页正确（不是共用首页的）
 3. 页面标题格式为「文章标题 | 一个路人甲 · 结构化面试」
-4. 所有正文内链无死链
-5. 所有引用的图片资源存在
-6. llms.txt / llms-full.txt / robots.txt / sitemap.xml 可访问
-7. 侧栏「一个路人甲原创问答」是独立分组，紧挨在「资料与课程」之前，链接仍是 /practice/original-qa-*，且不在「练习方法」下
-8. 首页「内容目录」和 llms 索引使用同一栏目名，链接与侧栏一致
+4. 每页有独立 description，且 og:description 与之相同
+5. 每页只有一个 h1；内页 JSON-LD 含 BreadcrumbList 与 Article，首页是 WebSite
+6. sitemap 中每个 URL 都有 lastmod，并与 docs/.vitepress/lastmod.json 一致
+7. 所有正文内链无死链
+8. 所有引用的图片资源存在
+9. llms.txt / llms-full.txt / robots.txt / sitemap.xml 可访问
+10. 侧栏「一个路人甲原创问答」是独立分组，紧挨在「资料与课程」之前，链接仍是 /practice/original-qa-*，且不在「练习方法」下
+11. 首页「内容目录」覆盖全部侧栏链接；llms 索引使用同一栏目名
 """
 
+import json
 import os
 import re
 import sys
 import threading
 import urllib.error
 import urllib.request
+from datetime import datetime
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(ROOT, "dist")
 SITE = "https://yigelurenjia.com"
+SITE_DESCRIPTION = (
+    "免费、系统、实战的结构化面试自学知识体系。"
+    "从零基础到上岸的完整学习路径，包含布点法、观点展开法、问答笔记法等原创方法论，"
+    "覆盖综合分析、组织管理、应急应变等各类题型。"
+)
+TITLE_SUFFIX = " | 一个路人甲 · 结构化面试"
+HOME_TITLE = "一个路人甲 · 结构化面试原创学习体系 | 免费自学资料"
 PORT = 4173
 # 侧栏分组与首页目录必须同时指向这些既有网址
 ORIGINAL_QA_GROUP = "一个路人甲原创问答"
@@ -185,6 +197,88 @@ def check_original_qa_nav():
     return problems
 
 
+def meta_content(html, key, attr="name"):
+    matched = re.search(
+        rf'<meta {attr}="{re.escape(key)}" content="([^"]*)"',
+        html,
+    )
+    return matched.group(1) if matched else ""
+
+
+def json_ld(html):
+    blocks = re.findall(
+        r'<script type="application/ld\+json">(.*?)</script>',
+        html,
+        re.S,
+    )
+    parsed = []
+    for block in blocks:
+        try:
+            parsed.append(json.loads(block))
+        except json.JSONDecodeError:
+            parsed.append(None)
+    return parsed
+
+
+def parse_time(value):
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def check_home_directory():
+    """首页「内容目录」应包含侧栏里的每一个链接。"""
+    review_path = os.path.join(DIST, "practice", "review.html")
+    home_path = os.path.join(DIST, "index.html")
+    problems = []
+    if not os.path.exists(review_path) or not os.path.exists(home_path):
+        return ["找不到 review.html 或 index.html，无法核对首页目录"]
+    groups = sidebar_groups(open(review_path, encoding="utf-8").read()) or []
+    sidebar_links = []
+    for _, links in groups:
+        for link in links:
+            if link not in sidebar_links:
+                sidebar_links.append(link)
+    home = open(home_path, encoding="utf-8").read()
+    block = heading_block(home, "内容目录")
+    if block is None:
+        return ["首页缺少「内容目录」"]
+    listed = set(links_in(block))
+    missing = [link for link in sidebar_links if link not in listed]
+    if missing:
+        problems.append("首页内容目录缺少侧栏链接：" + "、".join(missing))
+    return problems
+
+
+def check_sitemap_lastmod():
+    path = os.path.join(DIST, "sitemap.xml")
+    src = os.path.join(ROOT, "docs", ".vitepress", "lastmod.json")
+    problems = []
+    if not os.path.exists(path):
+        return ["找不到 sitemap.xml"]
+    if not os.path.exists(src):
+        return ["找不到 docs/.vitepress/lastmod.json"]
+    xml = open(path, encoding="utf-8").read()
+    expected = json.load(open(src, encoding="utf-8"))
+    found = {}
+    for loc, lastmod in re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", xml):
+        found[loc] = lastmod
+    for route in EXPECTED:
+        loc = SITE + ("/" if route == "/" else route)
+        lastmod = found.get(loc)
+        if not lastmod:
+            problems.append(f"sitemap 缺少 {loc} 的 lastmod")
+            continue
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})", lastmod):
+            problems.append(f"{loc} 的 lastmod 不是 ISO 8601：{lastmod}")
+            continue
+        wanted = expected.get(route)
+        if not wanted:
+            problems.append(f"lastmod.json 缺少 {route}")
+            continue
+        if parse_time(lastmod) != parse_time(wanted):
+            problems.append(f"{loc} lastmod {lastmod} 与记录 {wanted} 不一致")
+    return problems
+
+
 def strip_tags(html: str) -> str:
     t = re.sub(r"<script\b[^>]*>.*?</script>", " ", html, flags=re.S | re.I)
     t = re.sub(r"<style\b[^>]*>.*?</style>", " ", t, flags=re.S | re.I)
@@ -204,6 +298,7 @@ def main():
     base = f"http://127.0.0.1:{PORT}"
     ok = True
     results = []
+    descriptions = {}
 
     try:
         for path in EXPECTED:
@@ -228,6 +323,12 @@ def main():
 
             t = re.search(r"<title>(.*?)</title>", html)
             title = t.group(1) if t else ""
+            description = meta_content(html, "description")
+            og_description = meta_content(html, "og:description", "property")
+            og_url = meta_content(html, "og:url", "property")
+            h1_count = len(re.findall(r"<h1\b", html))
+            ld = json_ld(html)
+            ld_text = json.dumps(ld, ensure_ascii=False)
 
             has_skeleton = "正在加载内容" in text
 
@@ -238,8 +339,34 @@ def main():
                 status.append("正文缺失")
             if canonical != expect_canonical:
                 status.append(f"canonical={canonical}")
+            if og_url != expect_canonical:
+                status.append(f"og:url={og_url}")
             if has_skeleton:
                 status.append("骨架残留")
+            if not description or description == SITE_DESCRIPTION or len(description) < 20:
+                status.append("description 缺失或仍是全站介绍")
+            elif description in descriptions:
+                status.append(f"description 与 {descriptions[description]} 重复")
+            else:
+                descriptions[description] = path
+            if og_description != description:
+                status.append("og:description 与 description 不一致")
+            if h1_count != 1:
+                status.append(f"h1={h1_count}")
+            if path == "/":
+                if title != HOME_TITLE:
+                    status.append(f"title={title}")
+                if '"@type": "WebSite"' not in ld_text:
+                    status.append("首页缺少 WebSite")
+                if "BreadcrumbList" in ld_text:
+                    status.append("首页不应有面包屑标记")
+            else:
+                if not title.endswith(TITLE_SUFFIX):
+                    status.append(f"title={title}")
+                if '"@type": "BreadcrumbList"' not in ld_text or '"@type": "Article"' not in ld_text:
+                    status.append("缺少 Article 或面包屑")
+                if '"name": "首页"' not in ld_text:
+                    status.append("面包屑缺少首页")
 
             flag = "✅" if not status else "❌"
             if status:
@@ -314,6 +441,18 @@ def main():
                 print("  ❌", item)
         else:
             print("  ✅ 「一个路人甲原创问答」紧挨在「资料与课程」之前，链接仍是 /practice/original-qa-01 与 /practice/original-qa-02")
+
+        print()
+        print("=" * 72)
+        print("首页目录覆盖侧栏 / sitemap lastmod")
+        print("=" * 72)
+        extra = check_home_directory() + check_sitemap_lastmod()
+        if extra:
+            ok = False
+            for item in extra:
+                print("  ❌", item)
+        else:
+            print("  ✅ 首页目录包含全部侧栏链接，sitemap lastmod 与 lastmod.json 一致")
 
     finally:
         httpd.shutdown()
