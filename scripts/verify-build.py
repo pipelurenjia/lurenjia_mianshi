@@ -6,7 +6,7 @@
     npm run build && python scripts/verify-build.py
 
 检查项：
-1. 全部 39 个页面返回 200，且正文真实存在于静态 HTML 源码中（P0-1 回归测试）
+1. 全部 40 个页面返回 200，且正文真实存在于静态 HTML 源码中（P0-1 回归测试）
 2. 每页 canonical / og:url 逐页正确（不是共用首页的）
 3. 页面标题格式为「文章标题 | 一个路人甲 · 结构化面试」
 4. 所有正文内链无死链
@@ -31,7 +31,11 @@ SITE = "https://yigelurenjia.com"
 PORT = 4173
 # 侧栏分组与首页目录必须同时指向这些既有网址
 ORIGINAL_QA_GROUP = "一个路人甲原创问答"
-ORIGINAL_QA_LINKS = ["/practice/original-qa-01", "/practice/original-qa-02"]
+ORIGINAL_QA_LINKS = [
+    "/practice/original-qa-01",
+    "/practice/original-qa-02",
+    "/practice/original-qa-03",
+]
 
 EXPECTED = [
     "/",
@@ -44,7 +48,7 @@ EXPECTED = [
     "/practice/review", "/practice/practice-methods", "/practice/note-taking-deep",
     "/practice/repeat-deep", "/practice/practice-with-others",
     # 原创问答：侧栏独立分组，网址仍在 /practice/ 下，不要改成新路径
-    "/practice/original-qa-01", "/practice/original-qa-02",
+    "/practice/original-qa-01", "/practice/original-qa-02", "/practice/original-qa-03",
     "/expression/stop-words", "/expression/spoken-style", "/expression/fluency",
     "/mindset/nervous", "/mindset/anxiety", "/mindset/pace",
     "/mindset/study-fatigue", "/mindset/mindset",
@@ -313,7 +317,7 @@ def main():
             for item in nav_problems:
                 print("  ❌", item)
         else:
-            print("  ✅ 「一个路人甲原创问答」紧挨在「资料与课程」之前，链接仍是 /practice/original-qa-01 与 /practice/original-qa-02")
+            print("  ✅ 「一个路人甲原创问答」紧挨在「资料与课程」之前，链接为 " + "、".join(ORIGINAL_QA_LINKS))
 
     finally:
         httpd.shutdown()

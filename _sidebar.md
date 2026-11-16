@@ -50,6 +50,7 @@
 - 一个路人甲原创问答
   - [原创问答精选（一）](/practice/original-qa-01)
   - [原创问答精选（二）](/practice/original-qa-02)
+  - [原创问答精选（三）](/practice/original-qa-03)
 
 - 资料与课程
   - [配套资料与视频课](/guide/resources)
