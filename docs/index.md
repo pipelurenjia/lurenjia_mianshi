@@ -159,6 +159,7 @@ features:
 ### 一个路人甲原创问答
 - [原创问答精选（一）](/practice/original-qa-01) — 十则原创问答原文
 - [原创问答精选（二）](/practice/original-qa-02) — 第二组十则原创问答原文
+- [原创问答精选（三）](/practice/original-qa-03) — 第三组十则原创问答原文
 
 ### 表达能力
 - [口头语消除训练](/expression/stop-words) — 系统消除"嗯、那个、就是"

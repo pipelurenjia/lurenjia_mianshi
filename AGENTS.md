@@ -127,7 +127,7 @@ Sidebar is configured in `docs/.vitepress/config.mjs` under `themeConfig.sidebar
 }
 ```
 
-侧栏现为 9 个分组、38 个条目，与根目录 `_sidebar.md` 一致。「一个路人甲原创问答」独立于「练习方法」，放在「资料与课程」之前，目前包含原创问答精选（一）（二）；「真人经验」是独立分组。原创问答页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件、不要改栏目下的条目标题。
+侧栏现为 9 个分组、39 个条目，与根目录 `_sidebar.md` 一致。「一个路人甲原创问答」独立于「练习方法」，放在「资料与课程」之前，目前包含原创问答精选（一）（二）（三）；「真人经验」是独立分组。原创问答页面的源文件仍在 `docs/practice/`，对外网址保持 `/practice/original-qa-*`，调整分组时不要移动文件、不要改栏目下的条目标题。
 
 To add new pages:
 1. Create `.md` file in the appropriate folder under `docs/`
